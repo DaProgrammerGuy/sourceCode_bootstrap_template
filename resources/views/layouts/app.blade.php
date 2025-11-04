@@ -12,13 +12,16 @@
     <title>SB Admin 2 - Blank</title>
 
     <!-- Custom fonts for this template-->
-    <link href="{{ asset('sbAdmin2/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('sbAdmin2/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="{{ asset('sbAdmin2/css/sb-admin-2.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('sbAdmin2/css/sb-admin-2.min.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+
 
 </head>
 
@@ -84,50 +87,54 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="{{ asset('sbAdmin2/vendor/jquery/jquery.min.js')}}"></script>
-    <script src="{{ asset('sbAdmin2/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ asset('sbAdmin2/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('sbAdmin2/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="{{ asset('sbAdmin2/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+    <script src="{{ asset('sbAdmin2/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="{{ asset('sbAdmin2/js/sb-admin-2.min.js')}}"></script>
-<!-- ... rest of body ... -->
+    <script src="{{ asset('sbAdmin2/js/sb-admin-2.min.js') }}"></script>
+    <!-- ... rest of body ... -->
 
-<!-- PLUGINS JS -->
-<script src="{{ asset('sbAdmin2/vendor/select2/select2.min.js') }}"></script>
-<script src="{{ asset('sbAdmin2/vendor/dropify/dropify.min.js') }}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-<script src="{{ asset('sbAdmin2/vendor/datetimepicker/tempusdominus-bootstrap-4.min.js') }}"></script>
+    <!-- PLUGINS JS -->
+    <script src="{{ asset('sbAdmin2/vendor/select2/select2.min.js') }}"></script>
+    <script src="{{ asset('sbAdmin2/vendor/dropify/dropify.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="{{ asset('sbAdmin2/vendor/datetimepicker/tempusdominus-bootstrap-4.min.js') }}"></script>
 
-<!-- ONLY RUN PLUGINS ON FORM PAGES -->
-@hasSection('form-plugins')
-<script>
-$(document).ready(function() {
-    $('.select2').select2({
-        theme: "bootstrap4",
-        placeholder: "Select an option",
-        allowClear: true
-    });
+    <!-- ONLY RUN PLUGINS ON FORM PAGES -->
+    @hasSection('form-plugins')
+        <script>
+            $(document).ready(function() {
+                $('.select2').select2({
+                    theme: "bootstrap4",
+                    placeholder: "Select an option",
+                    allowClear: true
+                });
 
-    $('.dropify').dropify({
-        messages: {
-            'default': 'Drag and drop a file here or click',
-            'replace': 'Drag and drop or click to replace',
-            'remove': 'Remove',
-            'error': 'Ooops, something wrong happened.'
-        }
-    });
+                $('.dropify').dropify({
+                    messages: {
+                        'default': 'Drag and drop a file here or click',
+                        'replace': 'Drag and drop or click to replace',
+                        'remove': 'Remove',
+                        'error': 'Ooops, something wrong happened.'
+                    }
+                });
 
-    $('.datetimepicker').datetimepicker({ format: 'YYYY-MM-DD' });
-    $('.timepicker').datetimepicker({ format: 'LT' });
-});
-</script>
-@yield('form-plugins')
-@endif
+                $('.datetimepicker').datetimepicker({
+                    format: 'YYYY-MM-DD'
+                });
+                $('.timepicker').datetimepicker({
+                    format: 'LT'
+                });
+            });
+        </script>
+        @yield('form-plugins')
+    @endif
 
-<!-- PAGE-SPECIFIC SCRIPTS -->
-@stack('scripts')
+    <!-- PAGE-SPECIFIC SCRIPTS -->
+    @stack('scripts')
 </body>
 
 </html>

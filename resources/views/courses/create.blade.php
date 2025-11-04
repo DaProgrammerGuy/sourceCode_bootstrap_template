@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('form-plugins')
+@section('content')
     <div class="container-fluid">
 
         <!-- Page Heading -->
@@ -205,4 +205,8 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('form-plugins')
+    <!-- This triggers the plugin init -->
 @endsection
