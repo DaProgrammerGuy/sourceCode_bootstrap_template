@@ -1,0 +1,789 @@
+<div class="container-fluid ">
+                <div class="md-header-fixed">
+                    <div class="MD__Logo"><img src="images/Sourcecode-Academia-BE-l.jpg" alt=""></div>
+                    <button class="mobile__toggler" id="modalShow"><span></span></button>
+                </div>
+                                <div id="contentContainerDiv" class="">
+                        <style>
+        .bootstrap-datetimepicker-widget a {
+            color: #a1c95c;
+        }
+
+        .select2-container--default .select2-selection--multiple .select2-selection__choice {
+            background-color: #161616;
+            border: 1px solid #121212;
+        }
+    </style>
+    <div id="blureEffct" class="container">
+        <div class="row mt-2 mb-2">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <h2 class="_head01">Course<span> Management</span></h2>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <ol class="breadcrumb">
+                    <li><a href="#"><span>Course</span></a></li>
+                    <li><span>New</span></li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <div class="row m-0">
+                            <div class="col pl-0">
+                                <h2 class="_head03 font18 border-0 pb-0">New <span>Course</span></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="body p-0">
+                        <form id="course_form">
+                            <input type="hidden" name="_token" value="Glx6K3AflGINKZlqhklAXmj1o3b6ufxUZwU2lkbg">                            <div class="col-12 AddPro-Leftinfo AddPro-box">
+                                <div class="row addproTop">
+
+                                    <div class="col-3">
+                                        <label class="font12 mb-5">Main Category *</label>
+                                        <div class="form-s2 focused">
+                                            <select class="form-control formselect main_category course-required select2-hidden-accessible" placeholder="select Main Category" style="width:100%!important" name="main_category_id" value="" data-select2-id="37" tabindex="-1" aria-hidden="true">
+                                                <option value="0" data-select2-id="39">Select Main Category</option>
+                                                                                                    <option value="1">The Thought</option>
+                                                                                                    <option value="2">The Eloquence</option>
+                                                                                                    <option value="3">The Expertise</option>
+                                                                                                    <option value="4">Business Coaching</option>
+                                                                                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="38" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-main_category_id-zh-container"><span class="select2-selection__rendered" id="select2-main_category_id-zh-container" role="textbox" aria-readonly="true" title="Select Main Category">Select Main Category</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-3 pl-0 sub_cat">
+                                        <label class="font12 mb-5">Sub Category *</label>
+                                        <div class="form-s2 focused">
+                                            <select class="form-control formselect sub_category course-required select2-hidden-accessible" placeholder="select Sub Category" style="width:100%!important" name="sub_category_id" data-select2-id="40" tabindex="-1" aria-hidden="true">
+                                                <option value="0" data-select2-id="42">Select Sub Category</option>
+                                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="41" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-sub_category_id-m7-container"><span class="select2-selection__rendered" id="select2-sub_category_id-m7-container" role="textbox" aria-readonly="true" title="Select Sub Category">Select Sub Category</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-3 pl-0">
+                                        <label class="font12 mb-5">Course Methodology *</label>
+                                        <div class="form-s2 focused">
+                                            <select class="form-control formselect select2-hidden-accessible" placeholder="select Designation" style="width:100%!important" name="course_methodology" data-select2-id="43" tabindex="-1" aria-hidden="true">
+                                                <option value="0" selected="" data-select2-id="45">Select Course Methodology</option>
+                                                <option value="1"> Classroom</option>
+                                                <option value="2">Skill Development</option>
+                                                <option value="3">One on One Coaching Session</option>
+                                                <option value="4">Corporate Program</option>
+                                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="44" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-course_methodology-5a-container"><span class="select2-selection__rendered" id="select2-course_methodology-5a-container" role="textbox" aria-readonly="true" title="Select Course Methodology">Select Course Methodology</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-3 pl-0">
+                                        <label class="font12 mb-5">Course Type *</label>
+                                        <div class="form-s2 focused">
+                                            <select class="form-control formselect select2-hidden-accessible" placeholder="select Designation" style="width:100%!important" name="course_type" data-select2-id="46" tabindex="-1" aria-hidden="true">
+                                                <option value="0" selected="" data-select2-id="48">Select Course Type</option>
+                                                <option value="1">Live sessions</option>
+                                                <option value="2">On Demand</option>
+                                                <option value="3">Webinar</option>
+                                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="47" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-course_type-k4-container"><span class="select2-selection__rendered" id="select2-course_type-k4-container" role="textbox" aria-readonly="true" title="Select Course Type">Select Course Type</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-9 AddPro-Leftinfo">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h2 class="_head03 font18 PB-5 mb-15">Course <span>Detail</span></h2>
+                                        </div>
+                                    </div>
+                                    <div class="row Addpro-form">
+
+                                        <div class="col-6">
+                                            <div class="form-group row">
+                                                <label for="" class="col-sm-4 col-form-label">Course Code *</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control course-required" name="course_code">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-group row">
+                                                <label for="" class="col-sm-4 col-form-label">Course Level *</label>
+                                                <div class="col-sm-8">
+                                                    <div class="form-s2 focused">
+                                                        <select class="form-control formselect course-required select2-hidden-accessible" placeholder="select Course Level" style="width:100%!important" name="course_level" data-select2-id="49" tabindex="-1" aria-hidden="true">
+                                                            <option value="0" selected="" data-select2-id="51">Select Course Level</option>
+                                                            <option value="1">Beginner</option>
+                                                            <option value="2">Intermidate</option>
+                                                            <option value="3">Advanced</option>
+                                                            <option value="4">Expert</option>
+                                                            <option value="5">NA</option>
+                                                        </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="50" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-course_level-y1-container"><span class="select2-selection__rendered" id="select2-course_level-y1-container" role="textbox" aria-readonly="true" title="Select Course Level">Select Course Level</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="col-8">
+                                                                    <div class="form-group row">
+                                                                        <label for="" class="col-sm-5 pr-0 col-form-label">Course Pricing Model *</label>
+                                                                        <div class="col-sm-7 pl-0">
+                                                                            <div class="row">
+                                                                                <div class="col-auto PT-8">
+                                                                                    <div class="custom-control custom-radio font14">
+                                                                                        <input class="custom-control-input" type="radio" name="course_pricing_model" id="yes001" value="1">
+                                                                                        <label class="custom-control-label" for="yes001">Standard</label>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col pl-0 PT-8">
+                                                                                    <div class="custom-control custom-radio font14">
+                                                                                        <input class="custom-control-input" type="radio" name="course_pricing_model" id="no001" value="2" checked>
+                                                                                        <label class="custom-control-label" for="no001">Batch Wise</label>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div> -->
+                                        <!-- <div class="col-6 course_price" style="display:none">
+                                                                    <div class="form-group row">
+                                                                        <label for="" class="col-sm-4 col-form-label">Course Price (in PKR) *</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" name="course_price">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-6 course_price" style="display:none">
+                                                                    <div class="form-group row">
+                                                                        <label for="" class="col-sm-4 col-form-label">Course Price (in USD) *</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control" name="course_price_usd">
+                                                                        </div>
+                                                                    </div>
+                                                                </div> -->
+
+
+
+                                        <div class="col-6"></div>
+                                        <div class="col-12">
+                                            <div class="form-group row">
+                                                <label for="" class="col-sm-2 col-form-label">Course Title</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control course-required" name="course_title">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-6">
+                                            <div class="form-group row">
+                                                <label for="" class="col-sm-4 pr-0 col-form-label">Course
+                                                    Subscription</label>
+                                                <div class="col-sm-8">
+                                                    <div class="form-s2 focused">
+                                                        <select class="form-control formselect course-required select2-hidden-accessible" placeholder="select Course Subscription" style="width:100%!important" name="course_subscription_method" data-select2-id="52" tabindex="-1" aria-hidden="true">
+                                                            <option selected="" data-select2-id="54">Select Course Subscription</option>
+                                                            <option value="1">Monthly</option>
+                                                            <option value="2">One time</option>
+                                                            <option value="3">Quarterly</option>
+                                                            <option value="4">Annual</option>
+                                                            <option value="5">Free</option>
+                                                        </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="53" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-course_subscription_method-7z-container"><span class="select2-selection__rendered" id="select2-course_subscription_method-7z-container" role="textbox" aria-readonly="true" title="Select Course Subscription">Select Course Subscription</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="col-6">
+                                                                    <div class="form-group row">
+                                                                        <label for="" class="col-sm-4 col-form-label">Course Duration </label>
+                                                                        <div class="col-sm-8">
+                                                                            <div class="form-s2">
+                                                                                <select class="form-control formselect" placeholder="select Course Duration"
+                                                                                    style="width:100%!important">
+                                                                                    <option selected>Select Course Duration</option>
+                                                                                    <option>2 week</option>
+                                                                                    <option>4 week</option>
+                                                                                    <option>8 week</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div> -->
+                                        <div class="col-6">
+                                            <div class="form-group row">
+                                                <label for="" class="col-sm-4 col-form-label">Course Duration (in
+                                                    Months) *</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control course-required numeric" name="course_duration">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="col-6">
+                                                                    <div class="form-group row">
+                                                                        <label for="" class="col-sm-5 pr-0 col-form-label">Age Restrition</label>
+                                                                        <div class="col-sm-7 pl-0 font14">
+                                                                            <div class="row">
+                                                                                <div class="col-auto pl-0 PT-5">
+                                                                                    <div class="custom-control custom-radio">
+                                                                                        <input class="custom-control-input" type="radio" name="AgeRestrition" id="yes002" value="valuable">
+                                                                                        <label class="custom-control-label" for="yes002">Yes</label>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col pl-0 PT-5">
+                                                                                    <div class="custom-control custom-radio">
+                                                                                        <input class="custom-control-input" type="radio" name="AgeRestrition" id="no002" value="valuable">
+                                                                                        <label class="custom-control-label" for="no002">No</label>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div> -->
+
+                                        <div class="col-6">
+                                            <div class="form-group row">
+                                                <label for="" class="col-sm-4 pr-0 col-form-label">Charging
+                                                    Unit</label>
+                                                <div class="col-sm-8">
+                                                    <div class="form-s2 focused">
+                                                        <select class="form-control formselect course-required select2-hidden-accessible" placeholder="select Course Subscription" style="width:100%!important" name="course_charging_unit" data-select2-id="55" tabindex="-1" aria-hidden="true">
+                                                            <option selected="" data-select2-id="57">Select Charging Unit</option>
+                                                            <option value="1">Monthly</option>
+                                                            <option value="2">Daily</option>
+                                                            <option value="3">Hours</option>
+                                                        </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="56" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-course_charging_unit-p8-container"><span class="select2-selection__rendered" id="select2-course_charging_unit-p8-container" role="textbox" aria-readonly="true" title="Select Charging Unit">Select Charging Unit</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-6">
+                                            <div class="form-group row">
+                                                <label for="" class="col-sm-5 pr-0 col-form-label">Course
+                                                    Incubator *</label>
+                                                <div class="col-sm-7 pl-0 font14">
+                                                    <div class="row">
+                                                        <div class="col-auto  pl-0 PT-5">
+                                                            <div class="custom-control custom-radio">
+                                                                <input class="custom-control-input" type="radio" name="course_incubator" id="yes005" value="1" checked="">
+                                                                <label class="custom-control-label" for="yes005">Yes</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col pl-0 PT-5">
+                                                            <div class="custom-control custom-radio">
+                                                                <input class="custom-control-input" type="radio" name="course_incubator" id="no005" value="2">
+                                                                <label class="custom-control-label" for="no005">No</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                        <div class="col-12">
+                                            <div class="form-group row">
+                                                <label for="" class="col-sm-2 col-form-label">Short
+                                                    Description *</label>
+                                                <div class="col-sm-10">
+                                                    <textarea class="proTextarea course-required" name="short_description"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="form-group row">
+                                                <label for="" class="col-sm-2 col-form-label">Long Description *
+                                                </label>
+                                                <div class="col-sm-10">
+                                                    <textarea class="proTextarea  course-required" name="long_description" style="visibility: hidden; display: none;"></textarea><div id="cke_long_description" class="cke_1 cke cke_reset cke_chrome cke_editor_long_description cke_ltr cke_browser_webkit" dir="ltr" lang="en" role="application" aria-labelledby="cke_long_description_arialbl"><span id="cke_long_description_arialbl" class="cke_voice_label">Rich Text Editor, long_description</span><div class="cke_inner cke_reset" role="presentation"><span id="cke_1_top" class="cke_top cke_reset_all" role="presentation" style="height: auto; user-select: none;"><span id="cke_9" class="cke_voice_label">Editor toolbars</span><span id="cke_1_toolbox" class="cke_toolbox" role="group" aria-labelledby="cke_9" onmousedown="return false;"><span id="cke_12" class="cke_toolbar" aria-labelledby="cke_12_label" role="toolbar"><span id="cke_12_label" class="cke_voice_label">Clipboard/Undo</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_13" class="cke_button cke_button__cut cke_button_disabled " href="javascript:void('Cut')" title="Cut (Ctrl+X)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_13_label" aria-describedby="cke_13_description" aria-haspopup="false" aria-disabled="true" onkeydown="return CKEDITOR.tools.callFunction(2,event);" onfocus="return CKEDITOR.tools.callFunction(3,event);" onclick="CKEDITOR.tools.callFunction(4,this);return false;"><span class="cke_button_icon cke_button__cut_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -264px;background-size:auto;">&nbsp;</span><span id="cke_13_label" class="cke_button_label cke_button__cut_label" aria-hidden="false">Cut</span><span id="cke_13_description" class="cke_button_label" aria-hidden="false">&nbsp;Keyboard shortcut Ctrl+X</span></a><a id="cke_14" class="cke_button cke_button__copy cke_button_disabled " href="javascript:void('Copy')" title="Copy (Ctrl+C)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_14_label" aria-describedby="cke_14_description" aria-haspopup="false" aria-disabled="true" onkeydown="return CKEDITOR.tools.callFunction(5,event);" onfocus="return CKEDITOR.tools.callFunction(6,event);" onclick="CKEDITOR.tools.callFunction(7,this);return false;"><span class="cke_button_icon cke_button__copy_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -216px;background-size:auto;">&nbsp;</span><span id="cke_14_label" class="cke_button_label cke_button__copy_label" aria-hidden="false">Copy</span><span id="cke_14_description" class="cke_button_label" aria-hidden="false">&nbsp;Keyboard shortcut Ctrl+C</span></a><a id="cke_15" class="cke_button cke_button__paste cke_button_off" href="javascript:void('Paste')" title="Paste (Ctrl+V)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_15_label" aria-describedby="cke_15_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(8,event);" onfocus="return CKEDITOR.tools.callFunction(9,event);" onclick="CKEDITOR.tools.callFunction(10,this);return false;"><span class="cke_button_icon cke_button__paste_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -312px;background-size:auto;">&nbsp;</span><span id="cke_15_label" class="cke_button_label cke_button__paste_label" aria-hidden="false">Paste</span><span id="cke_15_description" class="cke_button_label" aria-hidden="false">&nbsp;Keyboard shortcut Ctrl+V</span></a><a id="cke_16" class="cke_button cke_button__pastetext cke_button_off" href="javascript:void('Paste as plain text')" title="Paste as plain text (Ctrl+Shift+V)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_16_label" aria-describedby="cke_16_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(11,event);" onfocus="return CKEDITOR.tools.callFunction(12,event);" onclick="CKEDITOR.tools.callFunction(13,this);return false;"><span class="cke_button_icon cke_button__pastetext_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -720px;background-size:auto;">&nbsp;</span><span id="cke_16_label" class="cke_button_label cke_button__pastetext_label" aria-hidden="false">Paste as plain text</span><span id="cke_16_description" class="cke_button_label" aria-hidden="false">&nbsp;Keyboard shortcut Ctrl+Shift+V</span></a><a id="cke_17" class="cke_button cke_button__pastefromword cke_button_off" href="javascript:void('Paste from Word')" title="Paste from Word" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_17_label" aria-describedby="cke_17_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(14,event);" onfocus="return CKEDITOR.tools.callFunction(15,event);" onclick="CKEDITOR.tools.callFunction(16,this);return false;"><span class="cke_button_icon cke_button__pastefromword_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -768px;background-size:auto;">&nbsp;</span><span id="cke_17_label" class="cke_button_label cke_button__pastefromword_label" aria-hidden="false">Paste from Word</span><span id="cke_17_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_18" class="cke_button cke_button__undo cke_button_disabled " href="javascript:void('Undo')" title="Undo (Ctrl+Z)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_18_label" aria-describedby="cke_18_description" aria-haspopup="false" aria-disabled="true" onkeydown="return CKEDITOR.tools.callFunction(17,event);" onfocus="return CKEDITOR.tools.callFunction(18,event);" onclick="CKEDITOR.tools.callFunction(19,this);return false;"><span class="cke_button_icon cke_button__undo_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -1008px;background-size:auto;">&nbsp;</span><span id="cke_18_label" class="cke_button_label cke_button__undo_label" aria-hidden="false">Undo</span><span id="cke_18_description" class="cke_button_label" aria-hidden="false">&nbsp;Keyboard shortcut Ctrl+Z</span></a><a id="cke_19" class="cke_button cke_button__redo cke_button_disabled " href="javascript:void('Redo')" title="Redo (Ctrl+Y)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_19_label" aria-describedby="cke_19_description" aria-haspopup="false" aria-disabled="true" onkeydown="return CKEDITOR.tools.callFunction(20,event);" onfocus="return CKEDITOR.tools.callFunction(21,event);" onclick="CKEDITOR.tools.callFunction(22,this);return false;"><span class="cke_button_icon cke_button__redo_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -960px;background-size:auto;">&nbsp;</span><span id="cke_19_label" class="cke_button_label cke_button__redo_label" aria-hidden="false">Redo</span><span id="cke_19_description" class="cke_button_label" aria-hidden="false">&nbsp;Keyboard shortcut Ctrl+Y</span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_20" class="cke_toolbar" aria-labelledby="cke_20_label" role="toolbar"><span id="cke_20_label" class="cke_voice_label">Editing</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_21" class="cke_button cke_button__scayt cke_button_off cke_button_expandable" href="javascript:void('Spell Check As You Type')" title="Spell Check As You Type" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_21_label" aria-describedby="cke_21_description" aria-haspopup="menu" aria-disabled="false" aria-expanded="false" onkeydown="return CKEDITOR.tools.callFunction(23,event);" onfocus="return CKEDITOR.tools.callFunction(24,event);" onclick="CKEDITOR.tools.callFunction(25,this);return false;"><span class="cke_button_icon cke_button__scayt_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -888px;background-size:auto;">&nbsp;</span><span id="cke_21_label" class="cke_button_label cke_button__scayt_label" aria-hidden="false">Spell Check As You Type</span><span id="cke_21_description" class="cke_button_label" aria-hidden="false"></span><span class="cke_button_arrow"></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_22" class="cke_toolbar" aria-labelledby="cke_22_label" role="toolbar"><span id="cke_22_label" class="cke_voice_label">Links</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_23" class="cke_button cke_button__link cke_button_off" href="javascript:void('Link')" title="Link (Ctrl+K)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_23_label" aria-describedby="cke_23_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(26,event);" onfocus="return CKEDITOR.tools.callFunction(27,event);" onclick="CKEDITOR.tools.callFunction(28,this);return false;"><span class="cke_button_icon cke_button__link_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -528px;background-size:auto;">&nbsp;</span><span id="cke_23_label" class="cke_button_label cke_button__link_label" aria-hidden="false">Link</span><span id="cke_23_description" class="cke_button_label" aria-hidden="false">&nbsp;Keyboard shortcut Ctrl+K</span></a><a id="cke_24" class="cke_button cke_button__unlink cke_button_disabled " href="javascript:void('Unlink')" title="Unlink" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_24_label" aria-describedby="cke_24_description" aria-haspopup="false" aria-disabled="true" onkeydown="return CKEDITOR.tools.callFunction(29,event);" onfocus="return CKEDITOR.tools.callFunction(30,event);" onclick="CKEDITOR.tools.callFunction(31,this);return false;"><span class="cke_button_icon cke_button__unlink_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -552px;background-size:auto;">&nbsp;</span><span id="cke_24_label" class="cke_button_label cke_button__unlink_label" aria-hidden="false">Unlink</span><span id="cke_24_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_25" class="cke_button cke_button__anchor cke_button_off" href="javascript:void('Anchor')" title="Anchor" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_25_label" aria-describedby="cke_25_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(32,event);" onfocus="return CKEDITOR.tools.callFunction(33,event);" onclick="CKEDITOR.tools.callFunction(34,this);return false;"><span class="cke_button_icon cke_button__anchor_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -504px;background-size:auto;">&nbsp;</span><span id="cke_25_label" class="cke_button_label cke_button__anchor_label" aria-hidden="false">Anchor</span><span id="cke_25_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_26" class="cke_toolbar" aria-labelledby="cke_26_label" role="toolbar"><span id="cke_26_label" class="cke_voice_label">Insert</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_27" class="cke_button cke_button__image cke_button_off" href="javascript:void('Image')" title="Image" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_27_label" aria-describedby="cke_27_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(35,event);" onfocus="return CKEDITOR.tools.callFunction(36,event);" onclick="CKEDITOR.tools.callFunction(37,this);return false;"><span class="cke_button_icon cke_button__image_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -360px;background-size:auto;">&nbsp;</span><span id="cke_27_label" class="cke_button_label cke_button__image_label" aria-hidden="false">Image</span><span id="cke_27_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_28" class="cke_button cke_button__table cke_button_off" href="javascript:void('Table')" title="Table" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_28_label" aria-describedby="cke_28_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(38,event);" onfocus="return CKEDITOR.tools.callFunction(39,event);" onclick="CKEDITOR.tools.callFunction(40,this);return false;"><span class="cke_button_icon cke_button__table_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -912px;background-size:auto;">&nbsp;</span><span id="cke_28_label" class="cke_button_label cke_button__table_label" aria-hidden="false">Table</span><span id="cke_28_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_29" class="cke_button cke_button__horizontalrule cke_button_off" href="javascript:void('Insert Horizontal Line')" title="Insert Horizontal Line" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_29_label" aria-describedby="cke_29_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(41,event);" onfocus="return CKEDITOR.tools.callFunction(42,event);" onclick="CKEDITOR.tools.callFunction(43,this);return false;"><span class="cke_button_icon cke_button__horizontalrule_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -336px;background-size:auto;">&nbsp;</span><span id="cke_29_label" class="cke_button_label cke_button__horizontalrule_label" aria-hidden="false">Insert Horizontal Line</span><span id="cke_29_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_30" class="cke_button cke_button__specialchar cke_button_off" href="javascript:void('Insert Special Character')" title="Insert Special Character" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_30_label" aria-describedby="cke_30_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(44,event);" onfocus="return CKEDITOR.tools.callFunction(45,event);" onclick="CKEDITOR.tools.callFunction(46,this);return false;"><span class="cke_button_icon cke_button__specialchar_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -864px;background-size:auto;">&nbsp;</span><span id="cke_30_label" class="cke_button_label cke_button__specialchar_label" aria-hidden="false">Insert Special Character</span><span id="cke_30_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_31" class="cke_toolbar" aria-labelledby="cke_31_label" role="toolbar"><span id="cke_31_label" class="cke_voice_label">Tools</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_32" class="cke_button cke_button__maximize cke_button_off" href="javascript:void('Maximize')" title="Maximize" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_32_label" aria-describedby="cke_32_description" aria-haspopup="false" aria-disabled="false" aria-pressed="false" onkeydown="return CKEDITOR.tools.callFunction(47,event);" onfocus="return CKEDITOR.tools.callFunction(48,event);" onclick="CKEDITOR.tools.callFunction(49,this);return false;"><span class="cke_button_icon cke_button__maximize_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -672px;background-size:auto;">&nbsp;</span><span id="cke_32_label" class="cke_button_label cke_button__maximize_label" aria-hidden="false">Maximize</span><span id="cke_32_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_33" class="cke_toolbar" aria-labelledby="cke_33_label" role="toolbar"><span id="cke_33_label" class="cke_voice_label">Document</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_34" class="cke_button cke_button__source cke_button_off" href="javascript:void('Source')" title="Source" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_34_label" aria-describedby="cke_34_description" aria-haspopup="false" aria-disabled="false" aria-pressed="false" onkeydown="return CKEDITOR.tools.callFunction(50,event);" onfocus="return CKEDITOR.tools.callFunction(51,event);" onclick="CKEDITOR.tools.callFunction(52,this);return false;"><span class="cke_button_icon cke_button__source_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -840px;background-size:auto;">&nbsp;</span><span id="cke_34_label" class="cke_button_label cke_button__source_label" aria-hidden="false">Source</span><span id="cke_34_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span><span class="cke_toolbar_break"></span><span id="cke_35" class="cke_toolbar" aria-labelledby="cke_35_label" role="toolbar"><span id="cke_35_label" class="cke_voice_label">Basic Styles</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_36" class="cke_button cke_button__bold cke_button_off" href="javascript:void('Bold')" title="Bold (Ctrl+B)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_36_label" aria-describedby="cke_36_description" aria-haspopup="false" aria-disabled="false" aria-pressed="false" onkeydown="return CKEDITOR.tools.callFunction(53,event);" onfocus="return CKEDITOR.tools.callFunction(54,event);" onclick="CKEDITOR.tools.callFunction(55,this);return false;"><span class="cke_button_icon cke_button__bold_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -24px;background-size:auto;">&nbsp;</span><span id="cke_36_label" class="cke_button_label cke_button__bold_label" aria-hidden="false">Bold</span><span id="cke_36_description" class="cke_button_label" aria-hidden="false">&nbsp;Keyboard shortcut Ctrl+B</span></a><a id="cke_37" class="cke_button cke_button__italic cke_button_off" href="javascript:void('Italic')" title="Italic (Ctrl+I)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_37_label" aria-describedby="cke_37_description" aria-haspopup="false" aria-disabled="false" aria-pressed="false" onkeydown="return CKEDITOR.tools.callFunction(56,event);" onfocus="return CKEDITOR.tools.callFunction(57,event);" onclick="CKEDITOR.tools.callFunction(58,this);return false;"><span class="cke_button_icon cke_button__italic_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -48px;background-size:auto;">&nbsp;</span><span id="cke_37_label" class="cke_button_label cke_button__italic_label" aria-hidden="false">Italic</span><span id="cke_37_description" class="cke_button_label" aria-hidden="false">&nbsp;Keyboard shortcut Ctrl+I</span></a><a id="cke_38" class="cke_button cke_button__strike cke_button_off" href="javascript:void('Strikethrough')" title="Strikethrough" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_38_label" aria-describedby="cke_38_description" aria-haspopup="false" aria-disabled="false" aria-pressed="false" onkeydown="return CKEDITOR.tools.callFunction(59,event);" onfocus="return CKEDITOR.tools.callFunction(60,event);" onclick="CKEDITOR.tools.callFunction(61,this);return false;"><span class="cke_button_icon cke_button__strike_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -72px;background-size:auto;">&nbsp;</span><span id="cke_38_label" class="cke_button_label cke_button__strike_label" aria-hidden="false">Strikethrough</span><span id="cke_38_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_39" class="cke_button cke_button__removeformat cke_button_off" href="javascript:void('Remove Format')" title="Remove Format" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_39_label" aria-describedby="cke_39_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(62,event);" onfocus="return CKEDITOR.tools.callFunction(63,event);" onclick="CKEDITOR.tools.callFunction(64,this);return false;"><span class="cke_button_icon cke_button__removeformat_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -792px;background-size:auto;">&nbsp;</span><span id="cke_39_label" class="cke_button_label cke_button__removeformat_label" aria-hidden="false">Remove Format</span><span id="cke_39_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_40" class="cke_toolbar" aria-labelledby="cke_40_label" role="toolbar"><span id="cke_40_label" class="cke_voice_label">Paragraph</span><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_41" class="cke_button cke_button__numberedlist cke_button_off" href="javascript:void('Insert/Remove Numbered List')" title="Insert/Remove Numbered List" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_41_label" aria-describedby="cke_41_description" aria-haspopup="false" aria-disabled="false" aria-pressed="false" onkeydown="return CKEDITOR.tools.callFunction(65,event);" onfocus="return CKEDITOR.tools.callFunction(66,event);" onclick="CKEDITOR.tools.callFunction(67,this);return false;"><span class="cke_button_icon cke_button__numberedlist_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -648px;background-size:auto;">&nbsp;</span><span id="cke_41_label" class="cke_button_label cke_button__numberedlist_label" aria-hidden="false">Insert/Remove Numbered List</span><span id="cke_41_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_42" class="cke_button cke_button__bulletedlist cke_button_off" href="javascript:void('Insert/Remove Bulleted List')" title="Insert/Remove Bulleted List" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_42_label" aria-describedby="cke_42_description" aria-haspopup="false" aria-disabled="false" aria-pressed="false" onkeydown="return CKEDITOR.tools.callFunction(68,event);" onfocus="return CKEDITOR.tools.callFunction(69,event);" onclick="CKEDITOR.tools.callFunction(70,this);return false;"><span class="cke_button_icon cke_button__bulletedlist_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -600px;background-size:auto;">&nbsp;</span><span id="cke_42_label" class="cke_button_label cke_button__bulletedlist_label" aria-hidden="false">Insert/Remove Bulleted List</span><span id="cke_42_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_43" class="cke_button cke_button__outdent cke_button_disabled " href="javascript:void('Decrease Indent')" title="Decrease Indent" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_43_label" aria-describedby="cke_43_description" aria-haspopup="false" aria-disabled="true" onkeydown="return CKEDITOR.tools.callFunction(71,event);" onfocus="return CKEDITOR.tools.callFunction(72,event);" onclick="CKEDITOR.tools.callFunction(73,this);return false;"><span class="cke_button_icon cke_button__outdent_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -456px;background-size:auto;">&nbsp;</span><span id="cke_43_label" class="cke_button_label cke_button__outdent_label" aria-hidden="false">Decrease Indent</span><span id="cke_43_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_44" class="cke_button cke_button__indent cke_button_off" href="javascript:void('Increase Indent')" title="Increase Indent" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_44_label" aria-describedby="cke_44_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(74,event);" onfocus="return CKEDITOR.tools.callFunction(75,event);" onclick="CKEDITOR.tools.callFunction(76,this);return false;"><span class="cke_button_icon cke_button__indent_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -408px;background-size:auto;">&nbsp;</span><span id="cke_44_label" class="cke_button_label cke_button__indent_label" aria-hidden="false">Increase Indent</span><span id="cke_44_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_45" class="cke_button cke_button__justifyleft cke_button_off" href="javascript:void('Align Left')" title="Align Left" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_45_label" aria-describedby="cke_45_description" aria-haspopup="false" aria-disabled="false" aria-pressed="false" onkeydown="return CKEDITOR.tools.callFunction(77,event);" onfocus="return CKEDITOR.tools.callFunction(78,event);" onclick="CKEDITOR.tools.callFunction(79,this);return false;"><span class="cke_button_icon cke_button__justifyleft_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -1080px;background-size:auto;">&nbsp;</span><span id="cke_45_label" class="cke_button_label cke_button__justifyleft_label" aria-hidden="false">Align Left</span><span id="cke_45_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_46" class="cke_button cke_button__justifycenter cke_button_off" href="javascript:void('Center')" title="Center" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_46_label" aria-describedby="cke_46_description" aria-haspopup="false" aria-disabled="false" aria-pressed="false" onkeydown="return CKEDITOR.tools.callFunction(80,event);" onfocus="return CKEDITOR.tools.callFunction(81,event);" onclick="CKEDITOR.tools.callFunction(82,this);return false;"><span class="cke_button_icon cke_button__justifycenter_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -1056px;background-size:auto;">&nbsp;</span><span id="cke_46_label" class="cke_button_label cke_button__justifycenter_label" aria-hidden="false">Center</span><span id="cke_46_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_47" class="cke_button cke_button__justifyright cke_button_off" href="javascript:void('Align Right')" title="Align Right" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_47_label" aria-describedby="cke_47_description" aria-haspopup="false" aria-disabled="false" aria-pressed="false" onkeydown="return CKEDITOR.tools.callFunction(83,event);" onfocus="return CKEDITOR.tools.callFunction(84,event);" onclick="CKEDITOR.tools.callFunction(85,this);return false;"><span class="cke_button_icon cke_button__justifyright_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -1104px;background-size:auto;">&nbsp;</span><span id="cke_47_label" class="cke_button_label cke_button__justifyright_label" aria-hidden="false">Align Right</span><span id="cke_47_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_48" class="cke_button cke_button__justifyblock cke_button_off" href="javascript:void('Justify')" title="Justify" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_48_label" aria-describedby="cke_48_description" aria-haspopup="false" aria-disabled="false" aria-pressed="false" onkeydown="return CKEDITOR.tools.callFunction(86,event);" onfocus="return CKEDITOR.tools.callFunction(87,event);" onclick="CKEDITOR.tools.callFunction(88,this);return false;"><span class="cke_button_icon cke_button__justifyblock_icon" style="background-image:url('https://admin.sourcecode.academy/ckeditor/plugins/icons.png?t=M6K9');background-position:0 -1032px;background-size:auto;">&nbsp;</span><span id="cke_48_label" class="cke_button_label cke_button__justifyblock_label" aria-hidden="false">Justify</span><span id="cke_48_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_49" class="cke_toolbar" aria-labelledby="cke_49_label" role="toolbar"><span id="cke_49_label" class="cke_voice_label">Styles</span><span class="cke_toolbar_start"></span><span id="cke_10" class="cke_combo cke_combo__styles cke_combo_off" role="presentation"><span id="cke_10_label" class="cke_combo_label">Styles</span><a class="cke_combo_button" title="Formatting Styles" tabindex="-1" href="javascript:void('Formatting Styles')" hidefocus="true" role="button" aria-labelledby="cke_10_label" aria-haspopup="listbox" onkeydown="return CKEDITOR.tools.callFunction(90,event,this);" onfocus="return CKEDITOR.tools.callFunction(91,event);" onclick="CKEDITOR.tools.callFunction(89,this);return false;" aria-expanded="false"><span id="cke_10_text" class="cke_combo_text cke_combo_inlinelabel">Styles</span><span class="cke_combo_open"><span class="cke_combo_arrow"></span></span></a></span><span id="cke_11" class="cke_combo cke_combo__format cke_combo_off" role="presentation"><span id="cke_11_label" class="cke_combo_label">Format</span><a class="cke_combo_button" title="Paragraph Format" tabindex="-1" href="javascript:void('Paragraph Format')" hidefocus="true" role="button" aria-labelledby="cke_11_label" aria-haspopup="listbox" onkeydown="return CKEDITOR.tools.callFunction(93,event,this);" onfocus="return CKEDITOR.tools.callFunction(94,event);" onclick="CKEDITOR.tools.callFunction(92,this);return false;" aria-expanded="false"><span id="cke_11_text" class="cke_combo_text cke_combo_inlinelabel">Format</span><span class="cke_combo_open"><span class="cke_combo_arrow"></span></span></a></span><span class="cke_toolbar_end"></span></span></span></span><div id="cke_1_contents" class="cke_contents cke_reset" role="presentation" style="height: 500px;"><span id="cke_54" class="cke_voice_label">Press ALT 0 for help</span><iframe src="" frameborder="0" class="cke_wysiwyg_frame cke_reset" title="Editor, long_description" aria-describedby="cke_54" tabindex="0" allowtransparency="true" style="width: 100%; height: 100%;"></iframe></div><span id="cke_1_bottom" class="cke_bottom cke_reset_all" role="presentation" style="user-select: none;"><span id="cke_1_resizer" class="cke_resizer cke_resizer_vertical cke_resizer_ltr" title="Resize" onmousedown="CKEDITOR.tools.callFunction(0, event)">◢</span><span id="cke_1_path_label" class="cke_voice_label">Elements path</span><span id="cke_1_path" class="cke_path" role="group" aria-labelledby="cke_1_path_label"><span class="cke_path_empty">&nbsp;</span></span></span></div></div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-12 Weightage-sec">
+
+                                            <div class="row m-0">
+                                                <div class="col-6 h-border pl-0">
+                                                    <h2 class="_head04 font18 border-0 PB-5">Course <span>Graduation
+                                                            Criteria</span></h2>
+                                                </div>
+                                                <div class="col-6 h-border pr-0">
+                                                    <div class="switch-div">
+                                                        <span class="btn_text">Show</span>
+                                                        <label class="switch">
+                                                            <input type="checkbox" class="show_btn" name="gradutation_switch_btn" value="0">
+                                                            <span class="slider round"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+
+
+                                            <div class="show_gradution_block" style="display:none">
+                                                <div class="row">
+                                                    <div class="col-4 PT-7">
+
+                                                    </div>
+                                                    <div class="col-3 pl-0">
+                                                        <label class="font12 mb-5">Minimum Score</label>
+                                                    </div>
+                                                    <div class="col-3 pl-0">
+                                                        <label class="font12 mb-5">Weightage</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-4 PT-7">
+                                                        <strong>Quiz</strong>
+                                                    </div>
+                                                    <div class="col-3 pl-0">
+                                                        <input type="text" class="form-control" name="minimum_quiz_score">
+                                                    </div>
+                                                    <div class="col-3 pl-0">
+                                                        <input type="text" class="form-control only_numerics" name="quiz_weightage">
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-4 PT-7">
+                                                        <strong>Attendence</strong>
+                                                    </div>
+                                                    <div class="col-3 pl-0">
+                                                        <input type="text" class="form-control" name="minimum_attendnace">
+                                                    </div>
+                                                    <div class="col-3 pl-0">
+                                                        <input type="text" class="form-control only_numerics" name="attendance_weightage">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-4 PT-7">
+                                                        <strong>Assignment</strong>
+                                                    </div>
+                                                    <div class="col-3 pl-0">
+                                                        <input type="text" class="form-control" name="minimum_assignment_score">
+                                                    </div>
+                                                    <div class="col-3 pl-0">
+                                                        <input type="text" class="form-control only_numerics" name="assignment_weightage">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-4 PT-7">
+                                                        <strong>Participation</strong>
+                                                    </div>
+                                                    <div class="col-3 pl-0">
+                                                        <input type="text" class="form-control" name="minimum_participation_score">
+                                                    </div>
+                                                    <div class="col-3 pl-0">
+                                                        <input type="text" class="form-control only_numerics" name="participation_weightage">
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="row">
+                                                                        <div class="col-4 PT-7">
+                                                                            <strong>Text info here</strong>
+                                                                        </div>
+                                                                        <div class="col-3 pl-0">
+                                                                            <input type="text" class="form-control">
+                                                                        </div>
+                                                                        <div class="col-3 pl-0">
+                                                                            <input type="text" class="form-control">
+                                                                        </div>
+                                                                    </div> -->
+
+
+                                                <div class="row total-Weightage">
+                                                    <div class="col-4">
+
+                                                    </div>
+                                                    <div class="col-3 pl-0">
+                                                        <input type="text" class="form-control" placeholder="Total Weightage" readonly="">
+                                                    </div>
+                                                    <div class="col-3 pl-0">
+                                                        <input type="text" name="total_weightage" class="form-control total_weightage" placeholder="0%" data-value="" readonly="">
+                                                    </div>
+                                                </div>
+
+                                                <!-- <div class="row font14">
+                                                                        <div class="col-3">
+                                                                            <div class="form-group">
+                                                                                <label for="" class="col-form-label pr-0">
+
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-2 pl-0">
+                                                                            <strong></strong>
+                                                                        </div>
+                                                                        <div class="col-2 pl-0">
+                                                                            <strong></strong>
+                                                                        </div>
+                                                                    </div>  -->
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="col-12 PT-15">
+                                            <h2 class="_head04 font18 PB-10">Course <span>Attributes</span>
+                                            </h2>
+                                            <div class="row add-property">
+
+                                                <div class="col-6">
+                                                    <label class="font12 mb-5">Attribute</label>
+                                                    <div class="form-s2">
+                                                        <!-- <select class="form-control formselect attribute" placeholder="select Designation" style="width:100%!important" name="attribute_id"> -->
+                                                        <select id="MCategory" class="demo-default attribute selectized" data-placeholder="Attribute" tabindex="-1" style="display: none;"><option value="" selected="selected"></option><option style="display:none;" class="get_attribute_3" value="3" data-name="Class Size">Class Size</option><option style="display:none;" class="get_attribute_5" value="5" data-name="Course Language">Course Language</option><option style="display:none;" class="get_attribute_9" value="9" data-name="Course Level">Course Level</option><option style="display:none;" class="get_attribute_10" value="10" data-name="Session Duration">Session Duration</option><option style="display:none;" class="get_attribute_11" value="11" data-name="Total Sessions">Total Sessions</option><option style="display:none;" class="get_attribute_12" value="12" data-name="Age">Age</option></select><div class="selectize-control demo-default attribute single"><div class="selectize-input items not-full"><input type="select-one" autocomplete="off" tabindex="" id="MCategory-selectized" placeholder="Attribute" style="width: 55.4688px;"></div><div class="selectize-dropdown single demo-default attribute" style="display: none; width: 366.625px; top: 35.125px; left: 0px;"><div class="selectize-dropdown-content"></div><option style="display:none;" class="get_attribute_3" value="3" data-name="Class Size">Class Size</option><option style="display:none;" class="get_attribute_5" value="5" data-name="Course Language">Course Language</option><option style="display:none;" class="get_attribute_9" value="9" data-name="Course Level">Course Level</option><option style="display:none;" class="get_attribute_10" value="10" data-name="Session Duration">Session Duration</option><option style="display:none;" class="get_attribute_11" value="11" data-name="Total Sessions">Total Sessions</option><option style="display:none;" class="get_attribute_12" value="12" data-name="Age">Age</option></div><option style="display:none;" class="get_attribute_3" value="3" data-name="Class Size">Class Size</option><option style="display:none;" class="get_attribute_5" value="5" data-name="Course Language">Course Language</option><option style="display:none;" class="get_attribute_9" value="9" data-name="Course Level">Course Level</option><option style="display:none;" class="get_attribute_10" value="10" data-name="Session Duration">Session Duration</option><option style="display:none;" class="get_attribute_11" value="11" data-name="Total Sessions">Total Sessions</option><option style="display:none;" class="get_attribute_12" value="12" data-name="Age">Age</option></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col pl-0">
+                                                    <label class="mb-5"><strong>Value</strong></label>
+                                                    <div class="form-s2">
+                                                        <!-- <select class="form-control formselect attribute_value" placeholder="select Designation" style="width:100%!important" name="attribute_value_id"> -->
+                                                        <select id="SCategory" class="demo-default attribute_value selectized" data-placeholder="Value" tabindex="-1" style="display: none;"><option value="" selected="selected"></option></select><div class="selectize-control demo-default attribute_value single"><div class="selectize-input items not-full"><input type="select-one" autocomplete="off" tabindex="" id="SCategory-selectized" placeholder="Value" style="width: 37.9844px;"></div><div class="selectize-dropdown single demo-default attribute_value" style="display: none; width: 240.641px; top: 35.125px; left: 0px;"><div class="selectize-dropdown-content"></div></div></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto pl-0 PT-15"><button type="" class="btn btn-primary mt-10 add_attribute">Add Attribute</button>
+                                                </div>
+                                                <div class="col-12 PT-20">
+
+                                                    <table width="100%" class="table nowrap table-type">
+                                                        <tbody class="multiple_attribute_tbl">
+
+
+
+                                                        </tbody>
+                                                    </table>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-12 PT-15">
+                                            <h2 class="_head04 font18 PB-10">Course <span>Search Tags</span></h2>
+
+                                            <div class="add-property">
+                                                <div class="row m-0">
+                                                    <div class="col pr-0">
+                                                        <input type="" class="form-control tag_input" placeholder="" name="tag">
+                                                    </div>
+                                                    <div class="col-auto pl-0"><button type="" class="btn btn-primary add_tag">Add Tag</button></div>
+                                                </div>
+
+                                                <div class="row m-0">
+                                                    <div class="col-12 multiple_tags_tbl">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 PT-15">
+                                            <h2 class="_head04 font18 PB-10">Course <span>Topics</span></h2>
+
+                                            <div class="add-property">
+                                                <div class="row m-0">
+                                                    <div class="col pr-0">
+                                                        <input type="" class="form-control topic_input" placeholder="" name="topic">
+                                                    </div>
+                                                    <div class="col-auto pl-0"><button type="" class="btn btn-primary add_topic">Add Topic</button></div>
+                                                </div>
+
+                                                <div class="row m-0">
+                                                    <div class="col-12 multiple_topics_tbl">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="col-12 PT-15">
+                                            <h2 class="_head04 font18 PB-10">Course <span>Project Categoreis</span></h2>
+
+                                            <div class="add-property">
+                                                <div class="row m-0">
+                                                    <div class="col pr-0">
+                                                        <input type="" class="form-control project_category_input"
+                                                            placeholder="" name="project_category">
+                                                    </div>
+                                                    <div class="col-auto pl-0"><button type=""
+                                                            class="btn btn-primary add_project_category">Add Project Category</button></div>
+                                                </div>
+
+                                                <div class="row m-0">
+                                                    <div class="col-12 multiple_project_category_tbl">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+
+                                        <div class="col-12 PT-15">
+                                            <h2 class="_head04 font18 PB-10">Enrollment <span>Slots</span>
+                                            </h2>
+                                            <div class="row add-property">
+                                                <div class="col-md-6 start-time">
+                                                    <label class="font12 mb-5 "> Start Time *</label>
+                                                    <div class="form-group" style="height: auto">
+                                                        <input type="text" id="start_time" class="form-control start_time datetimepicker3" name="start_time" autocomplete="off">
+                                                        <!-- <input type="text" id="start_time" class="form-control start_time timepicker " placeholder="" name="start_time"> -->
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <label class="font12 mb-5">End Time *</label>
+                                                    <div class="form-group" style="height: auto">
+                                                        <input type="text" id="end_time" class="form-control end_time datetimepicker3" name="end_time" autocomplete="off">
+
+                                                        <!-- <input type="text" id="end_time" class="form-control end_time timepicker" placeholder="" name="end_time"> -->
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto pl-0 PT-15"><button type="" class="btn btn-primary mt-10 add_slot">Add Slot</button></div>
+                                                <div class="col-12 PT-10">
+                                                    <table width="100%" class="table nowrap table-type">
+                                                        <tbody class="multiple_slots_tbl">
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 PT-15">
+                                            <h2 class="_head04 font18 PB-10 ">Course <span>Registration Fees</span></h2>
+                                            <div class="row add-property">
+                                                <div class="col">
+
+                                                    <label for="" class="font12 mb-5">Registration
+                                                        Fees
+                                                        (PKR)</label>
+
+                                                    <input type="text" class="form-control only_amount" name="registration_fees_pkr">
+
+
+                                                </div>
+                                                <div class="col">
+                                                    <label for="" class="font12 mb-5">Registration
+                                                        Fees
+                                                        (USD)</label>
+
+                                                    <input type="text" class="form-control only_amount" name="registration_fees_usd">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 PT-15">
+                                            <h2 class="_head04 font18 PB-10">Course <span>Languages</span></h2>
+                                            <div class="add-property">
+                                                <div class="row m-0">
+                                                    <div class="form-s2 col pr-0">
+                                                        <select name="course_languages[]" id="course_languages" class="form-control formselect select2-hidden-accessible" placeholder="Select Languages" multiple="" style="width:100%!important" data-select2-id="course_languages" tabindex="-1" aria-hidden="true">
+                                                                                                                                                                                                <option value="1">
+                                                                        English</option>
+                                                                                                                                    <option value="2">
+                                                                        Urdu</option>
+                                                                                                                                    <option value="3">
+                                                                        Malay</option>
+                                                                                                                                    <option value="4">
+                                                                        Arabic</option>
+                                                                                                                                                                                    </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="58" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1"><ul class="select2-selection__rendered"><li class="select2-search select2-search--inline"><input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" role="textbox" aria-autocomplete="list" placeholder="" style="width: 0.75em;"></li></ul></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 PT-15">
+                                            <h2 class="_head04 font18 PB-10">Allow Activity <span>Grade Evaluation</span></h2>
+                                            <div class="row add-property">
+                                                <div class="col-12">
+                                                    <div class="form-group row">
+                                                        <label for="" class="col-sm-5 pr-0 col-form-label">Allow Activity Grade Evaluation *</label>
+                                                        <div class="col-sm-7 pl-0 font14">
+                                                            <div class="row">
+                                                                <div class="col-auto pl-0 PT-5">
+                                                                    <div class="custom-control custom-radio">
+                                                                        <input class="custom-control-input" type="radio" name="allow_activity_grade_evaluation" id="yes_grade_eval" value="1">
+                                                                        <label class="custom-control-label" for="yes_grade_eval">Yes</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col pl-0 PT-5">
+                                                                    <div class="custom-control custom-radio">
+                                                                        <input class="custom-control-input" type="radio" name="allow_activity_grade_evaluation" id="no_grade_eval" value="0" checked="">
+                                                                        <label class="custom-control-label" for="no_grade_eval">No</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 PT-15">
+                                            <h2 class="_head04 font18 PB-10 mb-15">SEO <span>Information</span></h2>
+                                            <div class="row Addpro-form">
+                                                <div class="col-12">
+                                                    <div class="form-group row">
+                                                        <label for="" class="col-sm-3 col-form-label">Page Meta
+                                                            Title</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" name="page_meta">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group row">
+                                                        <label for="" class="col-sm-3 col-form-label">Meta
+                                                            Description</label>
+                                                        <div class="col-sm-9">
+                                                            <textarea class="proTextarea" name="meta_description"> </textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <div class="form-group row">
+                                                        <label for="" class="col-sm-3 col-form-label">Meta
+                                                            Keywords
+                                                            (Separate by commas)</label>
+                                                        <div class="col-sm-9">
+                                                            <textarea class="proTextarea" name="meta_keywords"> </textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <div class="form-group row">
+                                                        <label for="" class="col-sm-3 pr-0 col-form-label">Meta
+                                                            Property URL</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" name="meta_property_url">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <div class="form-group row">
+                                                        <label for="" class="col-sm-3 pr-0 col-form-label">Meta
+                                                            Property Type</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" name="meta_property_type">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group row">
+                                                        <label for="" class="col-sm-3 col-form-label">Meta
+                                                            Property
+                                                            Title</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" name="meta_property_title">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <div class="form-group row">
+                                                        <label for="" class="col-sm-3 col-form-label">Meta
+                                                            Property
+                                                            Description</label>
+                                                        <div class="col-sm-9">
+                                                            <textarea class="proTextarea" name="meta_property_description"> </textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <div class="form-group row">
+                                                        <label for="" class="col-sm-3 col-form-label">Meta
+                                                            Property
+                                                            Image</label>
+                                                        <div class="col-sm-9">
+
+                                                            <div class="form-wrap p-0">
+                                                                <div class="upload-pic"></div>
+                                                                <div class="dropify-wrapper"><div class="dropify-message"><span class="file-icon"></span> <p>Add File</p><p class="dropify-error">Ooops, something wrong appended.</p></div><div class="dropify-loader"></div><div class="dropify-errors-container"><ul></ul></div><input type="file" id="input-file-now" class="dropify" name="meta_property_image" accept="image/*" data-allowed-file-extensions="jpg png jpeg JPEG"><button type="button" class="dropify-clear">Remove</button><div class="dropify-preview"><span class="dropify-render"></span><div class="dropify-infos"><div class="dropify-infos-inner"><p class="dropify-filename"><span class="file-icon"></span> <span class="dropify-filename-inner"></span></p><p class="dropify-infos-message">Click to Replace</p></div></div></div></div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <div class="form-group row">
+                                                        <label for="" class="col-sm-3 col-form-label">Footer
+                                                            Content</label>
+                                                        <div class="col-sm-9">
+                                                            <textarea class="proTextarea" name="footer_content"> </textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 PT-10 PB-20 text-right">
+                                            <button type="button" class="btn btn-primary btn_save_course">Save</button>
+                                            <button type="submit" class="btn btn-cancel cancel_btn" data-dismiss="modal" aria-label="Close">Cancel</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="Product-imgUpload">
+                                        <h4>Course Images</h4>
+                                        <div class="col-md-12 PT-5 PB-15">
+                                            <div class="form-wrap p-0">
+                                                <label class="font12 mb-5">Add Thumbnail (650 x 450) *</label>
+                                                <div class="upload-pic"></div>
+                                                <div class="dropify-wrapper"><div class="dropify-message"><span class="file-icon"></span> <p>Add File</p><p class="dropify-error">Ooops, something wrong appended.</p></div><div class="dropify-loader"></div><div class="dropify-errors-container"><ul></ul></div><input type="file" id="input-file-now" class="dropify course-required" name="course_thumbnail" data-min-width="649" data-max-width="651" data-min-height="449" data-max-height="451" accept="image/*" data-allowed-file-extensions="jpg png jpeg JPEG webp"><button type="button" class="dropify-clear">Remove</button><div class="dropify-preview"><span class="dropify-render"></span><div class="dropify-infos"><div class="dropify-infos-inner"><p class="dropify-filename"><span class="file-icon"></span> <span class="dropify-filename-inner"></span></p><p class="dropify-infos-message">Click to Replace</p></div></div></div></div>
+                                            </div>
+                                        </div>
+                                        <h4>Add Cover Images</h4>
+                                        <div class="col-md-12 PT-5">
+                                            <div class="form-wrap p-0">
+                                                <label class="font12 mb-5"> Desktop (650 x 450) *</label>
+                                                <div class="upload-pic"></div>
+                                                <div class="dropify-wrapper"><div class="dropify-message"><span class="file-icon"></span> <p>Add File</p><p class="dropify-error">Ooops, something wrong appended.</p></div><div class="dropify-loader"></div><div class="dropify-errors-container"><ul></ul></div><input type="file" id="input-file-now" class="dropify course-required" name="course_desktop_cover_image" data-min-width="649" data-max-width="651" data-min-height="449" data-max-height="451" accept="image/*" data-allowed-file-extensions="jpg png jpeg JPEG webp"><button type="button" class="dropify-clear">Remove</button><div class="dropify-preview"><span class="dropify-render"></span><div class="dropify-infos"><div class="dropify-infos-inner"><p class="dropify-filename"><span class="file-icon"></span> <span class="dropify-filename-inner"></span></p><p class="dropify-infos-message">Click to Replace</p></div></div></div></div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="col-md-12 PT-5">
+                                                                    <div class="form-wrap p-0">
+                                                                        <label class="font12 mb-5">Tablet (1024 x 519) *</label>
+                                                                        <div class="upload-pic"></div>
+                                                                        <input type="file" id="input-file-now" class="dropify course-required" name="course_tablet_cover_image"
+                                                                        data-min-width="1023" data-max-width="1025" data-min-height="518" data-max-height="520" accept="image/*" data-allowed-file-extensions="jpg png jpeg JPEG"/>
+                                                                    </div>
+                                                                </div>-->
+                                        <div class="col-md-12 PT-5">
+                                            <div class="form-wrap p-0">
+                                                <label class="font12 mb-5">Mobile (480 x 791)</label>
+                                                <div class="upload-pic"></div>
+                                                <div class="dropify-wrapper"><div class="dropify-message"><span class="file-icon"></span> <p>Add File</p><p class="dropify-error">Ooops, something wrong appended.</p></div><div class="dropify-loader"></div><div class="dropify-errors-container"><ul></ul></div><input type="file" id="input-file-now" class="dropify" name="course_mobile_cover_image" data-min-width="479" data-max-width="481" data-min-height="790" data-max-height="792" accept="image/*" data-allowed-file-extensions="jpg png jpeg JPEG webp"><button type="button" class="dropify-clear">Remove</button><div class="dropify-preview"><span class="dropify-render"></span><div class="dropify-infos"><div class="dropify-infos-inner"><p class="dropify-filename"><span class="file-icon"></span> <span class="dropify-filename-inner"></span></p><p class="dropify-infos-message">Click to Replace</p></div></div></div></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 Addpro-form PT-10">
+                                            <label class="font12 mb-5">Youtube Video Link</label>
+                                            <div class="control-group">
+                                                <input type="text" class="form-control" name="youtube_link">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+                </div>
+            </div>

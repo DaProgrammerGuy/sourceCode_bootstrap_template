@@ -1,0 +1,294 @@
+<div id="content-wrapper">
+            <div class="overlay-blure"></div>
+            <div class="overlay-for-sidebar" style="display: none"></div>
+            <!--  -->
+            <div class="container-fluid ">
+                <div class="md-header-fixed">
+                    <div class="MD__Logo"><img src="images/Sourcecode-Academia-BE-l.jpg" alt=""></div>
+                    <button class="mobile__toggler" id="modalShow"><span></span></button>
+                </div>
+                                <div id="contentContainerDiv" class="">
+                    <style>
+   .sell360report {
+        padding-bottom: 15px
+      }
+
+      .sell360report .card {
+        background-color: #fff;
+        border: none;
+        padding: 10px 15px;
+        margin: 15px 0px;
+        border-radius: 0px;
+        position: relative;
+        box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
+        background-image: url(images/distributor-bg.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        height: 100px
+      }
+
+      .sell360report h2 {
+        font-size: 18px;
+        padding-top: 15px;
+        margin-bottom: 15px;
+        display: block
+      }
+
+      .sell360report h4 {
+        font-size: 18px;
+        padding: 0;
+        margin: 0;
+        color: #282828
+      }
+
+      .sell360report h4 span {
+        color: #282828;
+        font-family: 'proximanova-regular', sans-serif !important;
+        position: relative;
+      }
+
+      .sell360report .digit {
+        font-size: 30px;
+        font-weight: normal;
+        line-height: normal;
+        color: #282828;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        line-height: 1;
+        font-family: 'Rationale', sans-serif !important;
+        position: absolute;
+        bottom: 10px;
+        left: 15px
+      }
+
+      .sell360report .head-font {
+        font-size: 16px
+      }
+
+      .sell360report .card .cardicon {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        top: 20px;
+        right: 15px;
+        filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.2));
+      }
+
+      .action-btns {
+        padding: 30px 30px 0px 30px
+      }
+
+      .action-btns .btn-primary {
+        width: 100%;
+        letter-spacing: 1px;
+        font-size: 16px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        background: linear-gradient(90deg, #fff 0%, #fff 100%);
+        border-color: #e3e3e3;
+        color: #282828;
+      }
+
+      .action-btns .btn-primary:hover,
+      .action-btns .btn-primary:focus {
+        background: linear-gradient(90deg, #031a50 0%, #06205e 100%);
+        color: #fff;
+      }
+
+      .action-btns .btn-primary i {
+        position: absolute;
+        right: 40px;
+        top: 25px;
+      }
+
+      .add_button {
+        letter-spacing: 1px;
+        font-size: 14px;
+        padding: 6px 12px;
+        top: 48px;
+        right: 15px;
+      }
+
+      #widget-meter {
+        width: 90px;
+        margin: 0 auto;
+        position: absolute;
+        top: -6px;
+        right: 15px;
+      }
+
+      #widget-meter .needle,
+      #widget-meter .needle-center {
+        fill: #a6a6a6;
+      }
+
+      .label-percent {
+        font-size: 22px;
+        fill: #06205e;
+        padding-top: 25px;
+        font-family: 'Rationale', sans-serif !important;
+      }
+
+      .h_dash {
+        position: relative;
+        padding: 0;
+      }
+
+      .h_dash a {
+        display: block;
+        -webkit-box-shadow: 0px 0px 12px 0px rgba(79, 79, 79, 0.3);
+        -moz-box-shadow: 0px 0px 12px 0px rgba(79, 79, 79, 0.3);
+        box-shadow: 0px 0px 12px 0px rgba(79, 79, 79, 0.3);
+        border-radius: 0px;
+        height: 150px;
+        width: 100%;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+        background-image: url(images/dash-card-bg.png);
+        background-position: left bottom;
+        background-size: 30%;
+        background-repeat: no-repeat;
+        background-color: #fff;
+        -webkit-transition: all 0.15s;
+        -moz-transition: all 0.15s;
+        transition: all 0.15s;
+        s
+      }
+
+      .h_dash a::before {
+        content: '';
+        display: inline-block;
+        width: 2px;
+        height: 33px;
+        background-color: #a1c95c;
+        position: absolute;
+        bottom: 22px;
+        left: 0;
+      }
+
+      .HD-title {
+        color: #282828;
+        font-size: 18px;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        text-align: left;
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        margin: 0;
+        font-weight: 600;
+        padding: 0;
+        padding-bottom: 5px;
+        letter-spacing: 1px
+      }
+
+      .f-light {
+        font-weight: normal;
+        font-size: 14px;
+        display: block;
+        font-family: 'proximanova-light', sans-serif !important;
+        color: #787878
+      }
+
+      .h_dash a img {
+        width: 55px;
+        height: auto;
+        display: inline-block;
+        padding-top: 10px;
+        padding-right: 10px;
+        float: right;
+      }
+
+      .h_dash a:hover {
+        -webkit-box-shadow: 0px 0px 15px 0px rgba(79, 79, 79, 0.5);
+        -moz-box-shadow: 0px 0px 15px 0px rgba(79, 79, 79, 0.5);
+        box-shadow: 0px 0px 15px 0px rgba(79, 79, 79, 0.5);
+        background-size: 150%;
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        transition: all 0.2s;
+      }
+
+      .h_dash a:hover .HD-title {
+        color: #06205e;
+      }
+
+</style>
+<div class="row _user-TS">
+            <div class="col-md-12 _dashTOP"> <img class="_user_Pimage" src="images/avatar.svg" alt="">
+              <h2 class="_head01">Good Morning, New</h2>
+              <p>Here’s what’s happening today.</p>
+            </div>
+          </div>
+          <div class="sell360report">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card mt-0"> 
+                  <!-- <img class="cardicon" src="images/today-order.svg" alt=""> -->
+                  <h4>New <span>SignUps</span></h4>
+                  <h2 class="digit">0</h2>
+                </div>
+              </div> 
+              <div class="col-md-4">
+                <div class="card mt-0"> 
+                  <!-- <img class="cardicon" src="images/today-order.svg" alt=""> -->
+                  <h4>New<span> Enrollments</span></h4>
+                  <h2 class="digit">0</h2>
+
+                </div>
+              </div> 
+              <div class="col-md-4">
+                <div class="card mt-0"> 
+                  <!-- <img class="cardicon" src="images/target-monthly-icon.svg" alt=""> -->
+                  <h4>Active <span>Students</span></h4>
+                  <h2 class="digit"><small></small> 4564</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 h_dash">
+            <div class="row">
+              <div class="col-3"><a href="https://cms.sourcecode.academy/add-course"><img src="https://cms.sourcecode.academy/images/add-course.svg" alt="">
+                  <h2 class="HD-title">Add <span class="f-light">Course</span></h2>
+                </a> </div>
+              <div class="col-3"><a href="https://cms.sourcecode.academy/teacher-create"><img src="https://cms.sourcecode.academy/images/add-teacher.svg" alt="">
+                  <h2 class="HD-title">Add <span class="f-light">Teacher</span></h2>
+                </a> </div>
+              <div class="col-3"><a href="https://cms.sourcecode.academy/student-create"><img src="https://cms.sourcecode.academy/images/add-students.svg" alt="">
+                  <h2 class="HD-title">Add <span class="f-light">Student</span></h2>
+                </a> </div>
+                <div class="col-3"><a href="https://cms.sourcecode.academy/create-enrollment"><img src="https://cms.sourcecode.academy/images/enrollments-add.svg" alt="">
+                  <h2 class="HD-title"> Add<span class="f-light">Enrollment</span></h2>
+                </a> </div>
+                <div class="col-3"><a href="https://cms.sourcecode.academy/quizzes"><img src="https://cms.sourcecode.academy/images/quiz-list.svg" alt="">
+                  <h2 class="HD-title">Quiz <span class="f-light">List</span></h2>
+                </a> </div>
+              
+              <div class="col-3"><a href="https://cms.sourcecode.academy/leads"><img src="https://cms.sourcecode.academy/images/campaign-list.svg" alt="">
+                  <h2 class="HD-title">WEB <span class="f-light">Inquiries </span></h2>
+                </a> </div>
+              <div class="col-3"><a href="https://cms.sourcecode.academy/complaints"><img src="https://cms.sourcecode.academy/images/complaint-list.svg" alt="">
+                  <h2 class="HD-title">Complaint <span class="f-light">List</span></h2>
+                </a> </div>                
+              <div class="col-3"><a href="https://cms.sourcecode.academy/payments"><img src="https://cms.sourcecode.academy/images/payment-manage.svg" alt="">
+                <h2 class="HD-title">Manage  <span class="f-light">Payments</span></h2>
+              </a> </div>
+
+            </div>
+          </div>
+  
+                </div>
+            </div>
+            <footer class="sticky-footer">
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            2025 © Staging | Source Code Academia All rights reserved
+        </div>
+    </div>
+</footer>
+        </div>
