@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('content')
+@section('form-plugins')
     <div class="container-fluid">
 
         <!-- Page Heading -->
@@ -17,6 +17,7 @@
             </nav>
         </div>
 
+        <!-- Top Row 4 Selects -->
         <div class="row">
             <div class="col-xl-12">
                 <div class="card shadow mb-4">
@@ -84,4 +85,124 @@
                                     </select>
                                 </div>
                             </div>
-                        @endsection
+
+                            <!-- Left Panel Course Details -->
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <h6 class="font-weight-bold text-primary mb-3">Course Detail</h6>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Course Code *</label>
+                                            <input type="text" name="course_code" class="form-control course-required"
+                                                value="{{ old('course_code') }}">
+                                            @error('course_code')
+                                                <span class="text-danger small">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Course Level *</label>
+                                            <select name="course_level" class="form-control select2 course-required">
+                                                <option value="0">Select</option>
+                                                <option value="1" {{ old('course_level') == 1 ? 'selected' : '' }}>
+                                                    Beginner</option>
+                                                <option value="2" {{ old('course_level') == 2 ? 'selected' : '' }}>
+                                                    Intermediate</option>
+                                                <option value="3" {{ old('course_level') == 3 ? 'selected' : '' }}>
+                                                    Advanced</option>
+                                                <option value="4" {{ old('course_level') == 4 ? 'selected' : '' }}>
+                                                    Expert</option>
+                                                <option value="5" {{ old('course_level') == 5 ? 'selected' : '' }}>NA
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Course Title *</label>
+                                        <input type="text" name="course_title" class="form-control course-required"
+                                            value="{{ old('course_title') }}">
+                                        @error('course_title')
+                                            <span class="text-danger small">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Subscription</label>
+                                            <select name="course_subscription_method" class="form-control select2">
+                                                <option value="">Select</option>
+                                                <option value="1"
+                                                    {{ old('course_subscription_method') == 1 ? 'selected' : '' }}>Monthly
+                                                </option>
+                                                <option value="2"
+                                                    {{ old('course_subscription_method') == 2 ? 'selected' : '' }}>One time
+                                                </option>
+                                                <option value="3"
+                                                    {{ old('course_subscription_method') == 3 ? 'selected' : '' }}>
+                                                    Quarterly</option>
+                                                <option value="4"
+                                                    {{ old('course_subscription_method') == 4 ? 'selected' : '' }}>Annual
+                                                </option>
+                                                <option value="5"
+                                                    {{ old('course_subscription_method') == 5 ? 'selected' : '' }}>Free
+                                                </option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Duration (Months) *</label>
+                                            <input type="text" name="course_duration"
+                                                class="form-control course-required numeric"
+                                                value="{{ old('course_duration') }}">
+                                        </div>
+                                    </div>
+
+                                    <!-- Add more fields: fees, languages, SEO, etc. -->
+                                </div>
+
+                                <!-- Right Panel Images -->
+                                <div class="col-md-3">
+                                    <h6 class="font-weight-bold text-primary mb-3">Course Images</h6>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Thumbnail (650x450) *</label>
+                                        <input type="file" name="course_thumbnail"
+                                            class="form-control dropify course-required" accept="image/*">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Desktop Cover (650x450) *</label>
+                                        <input type="file" name="course_desktop_cover_image"
+                                            class="form-control dropify course-required" accept="image/*">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Mobile Cover (480x791)</label>
+                                        <input type="file" name="course_mobile_cover_image"
+                                            class="form-control dropify" accept="image/*">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">YouTube Link</label>
+                                        <input type="text" name="youtube_link" class="form-control"
+                                            value="{{ old('youtube_link') }}">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="row mt-4">
+                                <div class="col-12 text-right">
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                    <a href="{{ route('courses.index') }}" class="btn btn-secondary ml-2">Cancel</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
