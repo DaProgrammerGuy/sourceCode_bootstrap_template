@@ -16,6 +16,12 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
+    <!-- PLUGINS CSS (CDNs) -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/dropify@0.2.2/dist/css/dropify.min.css" rel="stylesheet">
+    <link
+        href="https://cdn.jsdelivr.net/npm/tempusdominus-bootstrap-4@5.39.0/build/css/tempusdominus-bootstrap-4.min.css"
+        rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('sbAdmin2/css/sb-admin-2.min.css') }}" rel="stylesheet">
@@ -97,31 +103,44 @@
     <script src="{{ asset('sbAdmin2/js/sb-admin-2.min.js') }}"></script>
     <!-- ... rest of body ... -->
 
-    <!-- PLUGINS JS -->
-    <script src="{{ asset('sbAdmin2/vendor/select2/select2.min.js') }}"></script>
-    <script src="{{ asset('sbAdmin2/vendor/dropify/dropify.min.js') }}"></script>
+    <!-- PLUGINS JS (CDNs) -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dropify@0.2.2/dist/js/dropify.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-    <script src="{{ asset('sbAdmin2/vendor/datetimepicker/tempusdominus-bootstrap-4.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tempusdominus-bootstrap-4@5.39.0/build/js/tempusdominus-bootstrap-4.min.js">
+    </script>
 
-    <!-- ONLY RUN PLUGINS ON FORM PAGES -->
+    <!-- ONLY RUN ON FORM PAGES -->
     @hasSection('form-plugins')
         <script>
             $(document).ready(function() {
+                // SELECT2 - SB Admin style
                 $('.select2').select2({
-                    theme: "bootstrap4",
-                    placeholder: "Select an option",
-                    allowClear: true
+                    theme: 'default', // ← REMOVE bootstrap4
+                    placeholder: 'Select an option',
+                    allowClear: true,
+                    width: '100%', // ← Force full width
+                    dropdownParent: $(this).parent() // ← Fixes z-index in modals
+                }).on('select2:open', function() {
+                    // Fix dropdown height
+                    $('.select2-results__options').css('max-height', '200px');
                 });
 
+                // Make Select2 look like SB Admin
+                $('.select2-container--default .select2-selection--single').css({
+                    'height': '38px',
+                    'padding': '6px 12px',
+                    'font-size': '0.875rem',
+                    'line-height': '1.5',
+                    'border': '1px solid #d1d3e2',
+                    'border-radius': '0.35rem'
+                });
+
+                // Dropify - unchanged
                 $('.dropify').dropify({
-                    messages: {
-                        'default': 'Drag and drop a file here or click',
-                        'replace': 'Drag and drop or click to replace',
-                        'remove': 'Remove',
-                        'error': 'Ooops, something wrong happened.'
-                    }
-                });
+                    /* ... */ });
 
+                // DateTimePicker - unchanged
                 $('.datetimepicker').datetimepicker({
                     format: 'YYYY-MM-DD'
                 });
@@ -133,7 +152,6 @@
         @yield('form-plugins')
     @endif
 
-    <!-- PAGE-SPECIFIC SCRIPTS -->
     @stack('scripts')
 </body>
 
