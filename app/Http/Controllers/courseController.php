@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class courseController extends Controller
@@ -20,7 +21,8 @@ class courseController extends Controller
     public function create()
     {
         //
-        return view('courses.create');
+        Category::whereNull('parent_id')->get();
+        return view('courses.create', compact('mainCategories'));
     }
 
     /**
