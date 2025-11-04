@@ -21,7 +21,7 @@ class courseController extends Controller
     public function create()
     {
         //
-        Category::whereNull('parent_id')->get();
+        $mainCategories = Category::whereNull('parent_id')->get();
         return view('courses.create', compact('mainCategories'));
     }
 
