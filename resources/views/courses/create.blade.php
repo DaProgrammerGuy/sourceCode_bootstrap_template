@@ -10,7 +10,7 @@
             <h1 class="h3 mb-0 text-gray-800"><b>Course</b> Management</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('home.index') }}">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('courses.index') }}">Courses</a></li>
                     <li class="breadcrumb-item active">New</li>
                 </ol>
@@ -32,8 +32,9 @@
                             <div class="row mb-4">
                                 <div class="col-md-3">
                                     <label class="form-label">Main Category *</label>
-                                    <select name="main_category_id" class="form-control select2 course-required">
-                                        <option value="0">Select Main Category</option>
+                                    <select name="main_category_id" class="form-control select2 course-required"
+                                        data-placeholder="Select Main Category">
+                                        <option value=""></option>
                                         @foreach ($mainCategories as $cat)
                                             <option value="{{ $cat->id }}"
                                                 {{ old('main_category_id') == $cat->id ? 'selected' : '' }}>
@@ -48,8 +49,9 @@
 
                                 <div class="col-md-3">
                                     <label class="form-label">Sub Category *</label>
-                                    <select name="sub_category_id" class="form-control select2 course-required">
-                                        <option value="">Select Sub Category</option>
+                                    <select name="sub_category_id" class="form-control select2"
+                                        data-placeholder="Select Sub Category">
+                                        <option value=""></option>
                                         <!-- Filled via JS -->
                                     </select>
                                     @error('sub_category_id')
@@ -59,8 +61,9 @@
 
                                 <div class="col-md-3">
                                     <label class="form-label">Course Methodology *</label>
-                                    <select name="course_methodology" class="form-control select2">
-                                        <option value="0">Select</option>
+                                    <select name="course_methodology" class="form-control select2"
+                                        data-placeholder="Select">
+                                        <option value=""></option>
                                         <option value="1" {{ old('course_methodology') == 1 ? 'selected' : '' }}>
                                             Classroom</option>
                                         <option value="2" {{ old('course_methodology') == 2 ? 'selected' : '' }}>Skill
@@ -74,8 +77,8 @@
 
                                 <div class="col-md-3">
                                     <label class="form-label">Course Type *</label>
-                                    <select name="course_type" class="form-control select2">
-                                        <option value="0">Select</option>
+                                    <select name="course_type" class="form-control select2" data-placeholder="Select">
+                                        <option value=""></option>
                                         <option value="1" {{ old('course_type') == 1 ? 'selected' : '' }}>Live
                                             sessions</option>
                                         <option value="2" {{ old('course_type') == 2 ? 'selected' : '' }}>On Demand

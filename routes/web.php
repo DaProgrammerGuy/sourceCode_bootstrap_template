@@ -8,6 +8,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/home', homeController::class);
+Route::get('/home', [homeController::class, 'index'])->name('home');;
 
 Route::resource('/courses', courseController::class);

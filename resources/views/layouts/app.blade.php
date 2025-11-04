@@ -111,46 +111,45 @@
     </script>
 
     <!-- ONLY RUN ON FORM PAGES -->
-    @hasSection('form-plugins')
-        <script>
-            $(document).ready(function() {
-                // SELECT2 - SB Admin style
-                $('.select2').select2({
-                    theme: 'default', // ← REMOVE bootstrap4
-                    placeholder: 'Select an option',
-                    allowClear: true,
-                    width: '100%', // ← Force full width
-                    dropdownParent: $(this).parent() // ← Fixes z-index in modals
-                }).on('select2:open', function() {
-                    // Fix dropdown height
-                    $('.select2-results__options').css('max-height', '200px');
-                });
+@hasSection('form-plugins')
+<script>
+    window.addEventListener('load', function () {
+        // SELECT2
+        $('.select2').each(function () {
+            var $el = $(this);
+            var placeholder = $el.data('placeholder') || 'Select an option';
 
-                // Make Select2 look like SB Admin
-                $('.select2-container--default .select2-selection--single').css({
-                    'height': '38px',
-                    'padding': '6px 12px',
-                    'font-size': '0.875rem',
-                    'line-height': '1.5',
-                    'border': '1px solid #d1d3e2',
-                    'border-radius': '0.35rem'
-                });
-
-                // Dropify - unchanged
-                $('.dropify').dropify({
-                    /* ... */ });
-
-                // DateTimePicker - unchanged
-                $('.datetimepicker').datetimepicker({
-                    format: 'YYYY-MM-DD'
-                });
-                $('.timepicker').datetimepicker({
-                    format: 'LT'
-                });
+            $el.select2({
+                placeholder: placeholder,
+                allowClear: true,
+                width: '100%',
+                theme: 'default'
             });
-        </script>
-        @yield('form-plugins')
-    @endif
+
+            setTimeout(function () {
+                var val = $el.val();
+                if (val) $el.val(val).trigger('change.select2');
+            }, 50);
+        });
+
+        // DROPIFY - SMALL & NO CSS
+        $('.dropify').dropify({
+            messages: {
+                'default': 'Click or drop',
+                'replace': 'Replace',
+                'remove':  '×',
+                'error':   'Error'
+            },
+            height: 90  // ← small height
+        });
+
+        // DATETIMEPICKER
+        $('.datetimepicker').datetimepicker({ format: 'YYYY-MM-DD' });
+        $('.timepicker').datetimepicker({ format: 'LT' });
+    });
+</script>
+@yield('form-plugins')
+@endif
 
     @stack('scripts')
 </body>

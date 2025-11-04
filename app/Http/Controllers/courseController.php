@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Course;
 use Illuminate\Http\Request;
 
 class courseController extends Controller
@@ -13,6 +14,12 @@ class courseController extends Controller
     public function index()
     {
         //
+        // $courses = Course::with(['mainCategory', 'subCategory'])
+        $courses = Course::with(['mainCategory'])
+            ->latest()
+            ->paginate(10);
+            
+        return view('courses.index', compact('courses'));
     }
 
     /**
@@ -28,9 +35,34 @@ class courseController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+    
     public function store(Request $request)
     {
-        //
+        // Validate
+        $validated = $request->validate([
+            'main_category_id' => 'required|exists:categories,id',
+            'sub_category_id' => 'nullable|exists:categories,id',
+            'course_methodology' => 'required',
+            'course_type' => 'required',
+            'course_code' => 'required|unique:courses',
+            'course_title' => 'required',
+            'course_duration' => 'required|numeric',
+            'course_thumbnail' => 'required|image',
+            'course_desktop_cover_image' => 'required|image',
+            'course_mobile_cover_image' => 'nullable|image',
+        ]);
+
+        // Handle file uploads
+        if($request->hasFile('course_thumbnail')) {
+            $validated['thumbnail'] = $request->file('course_thumbnail')
+                ->store('courses/thumbnails', 'public');
+        }
+
+        // Create course
+        $course = Course::create($validated);
+
+        return redirect()->route('courses.index')
+            ->with('success', 'Course created successfully');
     }
 
     /**

@@ -16,10 +16,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+                // Main Categories
+        $thought = Category::create(['name' => 'The Thought']);
+        $eloquence = Category::create(['name' => 'The Eloquence']);
 
-        // database/seeders/CategorySeeder.php
-        Category::create(['name' => 'The Thought']);
-        Category::create(['name' => 'The Eloquence']);
+        // Sub Categories for The Thought
+        Category::create(['name' => 'Philosophy', 'parent_id' => $thought->id]);
+        Category::create(['name' => 'Psychology', 'parent_id' => $thought->id]);
+
+        // Sub Categories for The Eloquence
+        Category::create(['name' => 'Public Speaking', 'parent_id' => $eloquence->id]);
+        Category::create(['name' => 'Writing', 'parent_id' => $eloquence->id]);
     }
 }
