@@ -167,33 +167,33 @@
 
                                 <!-- Right Panel Images -->
                                 <div class="col-md-3">
-                                    <h6 class="font-weight-bold text-primary mb-3">Course Images</h6>
+                                        <h6 class="font-weight-bold text-primary mb-3">Course Images</h6>
 
-                                    <div class="mb-3">
-                                        <label class="form-label">Thumbnail (650x450) *</label>
-                                        <input type="file" name="course_thumbnail"
-                                            class="form-control dropify course-required" accept="image/*">
-                                    </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Thumbnail (650x450) *</label>
+                                            <input type="file" name="course_thumbnail"
+                                                class="form-control dropify course-required" accept="image/*">
+                                        </div>
 
-                                    <div class="mb-3">
-                                        <label class="form-label">Desktop Cover (650x450) *</label>
-                                        <input type="file" name="course_desktop_cover_image"
-                                            class="form-control dropify course-required" accept="image/*">
-                                    </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Desktop Cover (650x450) *</label>
+                                            <input type="file" name="course_desktop_cover_image"
+                                                class="form-control dropify course-required" accept="image/*">
+                                        </div>
 
-                                    <div class="mb-3">
-                                        <label class="form-label">Mobile Cover (480x791)</label>
-                                        <input type="file" name="course_mobile_cover_image"
-                                            class="form-control dropify" accept="image/*">
-                                    </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Mobile Cover (480x791)</label>
+                                            <input type="file" name="course_mobile_cover_image"
+                                                class="form-control dropify" accept="image/*">
+                                        </div>
 
-                                    <div class="mb-3">
-                                        <label class="form-label">YouTube Link</label>
-                                        <input type="text" name="youtube_link" class="form-control"
-                                            value="{{ old('youtube_link') }}">
+                                        <div class="mb-3">
+                                            <label class="form-label">YouTube Link</label>
+                                            <input type="text" name="youtube_link" class="form-control"
+                                                value="{{ old('youtube_link') }}">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
                             <!-- Submit Button -->
                             <div class="row mt-4">

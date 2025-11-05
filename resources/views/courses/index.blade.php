@@ -43,8 +43,9 @@
                                 <th>Code</th>
                                 <th>Title</th>
                                 <th>Category</th>
-                                <th>Level</th>
+                                <th>Methodology</th>
                                 <th>Type</th>
+                                <th>Level</th>
                                 <th>Duration</th>
                                 <th>Status</th>
                                 <th>Actions</th>
@@ -55,16 +56,35 @@
                                 <tr>
                                     <td>{{ $course->course_code }}</td>
                                     <td>{{ $course->course_title }}</td>
+
+                                    <!-- Category display -->
                                     <td>
-                                        {{ $course->mainCategory->name ?? 'N/A' }} 
-                                        <br>
-                                        <small class="text-muted">{{ $course->subCategory->name ?? 'N/A' }}</small>
+                                        {{ $course->mainCategory->name ?? 'N/A' }}<br>
+                                        <small class="text-muted">
+                                            {{ $course->subCategory->name ?? '—' }}
+                                        </small>
+                                    </td>
+
+                                    <!-- Mapped Names -->
+                                    <td>
+                                        <span class="badge badge-secondary">
+                                            {{ $course->course_methodology_name }}
+                                        </span>
                                     </td>
                                     <td>
-                                        <span class="badge badge-info">{{ $course->level_name }}</span>
+                                        <span class="badge badge-warning">
+                                            {{ $course->course_type_name }}
+                                        </span>
                                     </td>
-                                    <td>{{ $course->type_name }}</td>
+                                    <td>
+                                        <span class="badge badge-info">
+                                            {{ $course->course_level_name }}
+                                        </span>
+                                    </td>
+
                                     <td>{{ $course->course_duration }} months</td>
+
+                                    <!-- Status -->
                                     <td>
                                         @if($course->is_active)
                                             <span class="badge badge-success">Active</span>
@@ -72,6 +92,8 @@
                                             <span class="badge badge-secondary">Inactive</span>
                                         @endif
                                     </td>
+
+                                    <!-- Actions -->
                                     <td>
                                         <a href="{{ route('courses.show', $course) }}" 
                                            class="btn btn-info btn-sm" title="View">
@@ -95,7 +117,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="8" class="text-center">No courses found.</td>
+                                    <td colspan="9" class="text-center">No courses found.</td>
                                 </tr>
                             @endforelse
                         </tbody>

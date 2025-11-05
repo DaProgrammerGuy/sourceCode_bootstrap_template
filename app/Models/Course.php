@@ -44,14 +44,87 @@ class Course extends Model
         'discount_price' => 'decimal:2',
     ];
 
-    public function mainCategory()
-        {
-            return $this->belongsTo(Category::class, 'category_id');
-        }
+    // public function mainCategory()
+    //     {
+    //         return $this->belongsTo(Category::class, 'category_id');
+    //     }
 
     // public function subCategory()
     //     {
     //         return $this->belongsTo(Category::class, 'sub_category_id');
     //     }
+
+
+
+      /**
+     * Get the main category of the course
+     */
+    public function mainCategory()
+    {
+        return $this->belongsTo(Category::class, 'main_category_id');
+    }
+
+    /**
+     * Get the sub category of the course
+     */
+    public function subCategory()
+    {
+        return $this->belongsTo(Category::class, 'sub_category_id');
+    }
+
+    /**
+     * Scope to get active courses
+     */
+    public function scopeActive($query)
+    {
+        return $query->where('is_active', true);
+    }
+
+    /**
+     * Scope to get featured courses
+     */
+    public function scopeFeatured($query)
+    {
+        return $query->where('is_featured', true);
+    }
+
+public static $methodologyLabels = [
+    1 => 'Classroom',
+    2 => 'Skill Development',
+    3 => 'One on One',
+    4 => 'Corporate',
+];
+
+public static $typeLabels = [
+    1 => 'Live',
+    2 => 'On Demand',
+    3 => 'Webinar',
+];
+
+public static $levelLabels = [
+    1 => 'Beginner',
+    2 => 'Intermediate',
+    3 => 'Advanced',
+    4 => 'Expert',
+    5 => 'N/A',
+];
+
+public function getCourseMethodologyNameAttribute()
+{
+    return self::$methodologyLabels[$this->course_methodology] ?? 'Unknown';
+}
+
+public function getCourseTypeNameAttribute()
+{
+    return self::$typeLabels[$this->course_type] ?? 'Unknown';
+}
+
+public function getCourseLevelNameAttribute()
+{
+    return self::$levelLabels[$this->course_level] ?? 'Unknown';
+}
+
+
+
 
 }
