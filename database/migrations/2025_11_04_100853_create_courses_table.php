@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             // Category relationships
             $table->foreignId('main_category_id')->constrained('categories')->onDelete('cascade');
-            // $table->foreignId('sub_category_id')->constrained('categories')->onDelete('cascade');
-            $table->unsignedBigInteger('sub_category_id')->nullable();
+            $table->foreignId('sub_category_id')->constrained('categories')->onDelete('cascade');
+            // $table->unsignedBigInteger('sub_category_id')->nullable();
 
             
             // Basic course info

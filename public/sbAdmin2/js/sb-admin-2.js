@@ -1,14 +1,21 @@
 (function($) {
   "use strict"; // Start of use strict
 
-  // Toggle the side navigation
+// Toggle the side navigation
   $("#sidebarToggle, #sidebarToggleTop").on('click', function(e) {
-    $("body").toggleClass("sidebar-toggled");
-    $(".sidebar").toggleClass("toggled");
-    if ($(".sidebar").hasClass("toggled")) {
-      $('.sidebar .collapse').collapse('hide');
-    };
+      $("body").toggleClass("sidebar-toggled");
+      $(".sidebar").toggleClass("toggled");
+
+      if ($(".sidebar").hasClass("toggled")) {
+          $('.sidebar .collapse').collapse('hide');
+          // Change to small logo
+          $("#mainLogo").attr("src", "/sbAdmin2/img/logo.png");
+      } else {
+          // Change back to big logo
+          $("#mainLogo").attr("src", "/sbAdmin2/img/Sourcecode-Academia-BE.png");
+      }
   });
+
 
   // Close any open menu accordions when window is resized below 768px
   $(window).resize(function() {

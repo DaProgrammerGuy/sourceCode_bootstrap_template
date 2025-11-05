@@ -8,14 +8,22 @@ use Illuminate\Http\Request;
 
 class courseController extends Controller
 {
+
+
+    public function getSubcategories($id)
+    {
+        $subcategories = Category::where('parent_id', $id)->get();
+        return response()->json($subcategories);
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         //
-        // $courses = Course::with(['mainCategory', 'subCategory'])
-        $courses = Course::with(['mainCategory'])
+        $courses = Course::with(['mainCategory', 'subCategory'])
+        // $courses = Course::with(['mainCategory'])
             ->latest()
             ->paginate(10);
             
@@ -28,7 +36,10 @@ class courseController extends Controller
     public function create()
     {
         //
-        $mainCategories = Category::whereNull('parent_id')->get();
+        // $mainCategories = Category::whereNull('parent_id')->get();
+        $mainCategories = Category::whereNull('parent_id')
+        ->with('subcategories')
+        ->get();
         return view('courses.create', compact('mainCategories'));
     }
 

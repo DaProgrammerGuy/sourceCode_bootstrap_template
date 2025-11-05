@@ -135,3 +135,17 @@
 /* .select2-container {
     width: 100% !important;
 } */
+
+
+/* Default (expanded) logo */
+.sidebar .main-logo {
+    content: url('/sbAdmin2/img/Sourcecode-Academia-BE.png');
+    max-height: 40px;
+    transition: all 0.3s ease;
+}
+
+/* When sidebar is toggled (collapsed) */
+.sidebar.toggled .main-logo {
+    content: url('/sbAdmin2/img/logo.png');
+    max-height: 30px;
+}

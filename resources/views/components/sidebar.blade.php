@@ -2,7 +2,7 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home') }}">
-        <img src="{{ asset('sbAdmin2/img/Sourcecode-Academia-BE.png') }}" alt="SourceCode Logo" style="max-height: 40px; width: auto;">
+        <img src="{{ asset('sbAdmin2/img/Sourcecode-Academia-BE.png') }}" alt="SourceCode Logo" style="max-height: 40px; width: auto;" id="mainLogo" class="main-logo">
     </a>
 
 
@@ -24,11 +24,11 @@
         Interface
     </div>
 
-    <!-- Nav Item - Pages Collapse Menu -->
+    <!-- Nav Item - Courses Collapse menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
             aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-cog"></i>
+            <i class="fas fa-fw fa-book-open"></i>
             <span>Courses</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -42,7 +42,7 @@
         </div>
     </li>
 
-    <!-- Nav Item - Utilities Collapse Menu -->
+    {{-- <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
             aria-expanded="true" aria-controls="collapseUtilities">
@@ -101,7 +101,7 @@
         <a class="nav-link" href="tables.html">
             <i class="fas fa-fw fa-table"></i>
             <span>Tables</span></a>
-    </li>
+    </li> --}}
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

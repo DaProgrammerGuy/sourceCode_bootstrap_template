@@ -8,6 +8,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', [homeController::class, 'index'])->name('home');;
+Route::get('/home', [homeController::class, 'index'])->name('home');
+
+Route::get('/get-subcategories/{id}', [courseController::class, 'getSubcategories']);
+
 
 Route::resource('/courses', courseController::class);

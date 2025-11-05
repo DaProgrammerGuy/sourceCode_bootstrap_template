@@ -147,6 +147,38 @@
         $('.datetimepicker').datetimepicker({ format: 'YYYY-MM-DD' });
         $('.timepicker').datetimepicker({ format: 'LT' });
     });
+
+    $(document).ready(function () {
+        // Handle subcategory loading on any page where the selects exist
+        $(document).on('change', 'select[name="main_category_id"]', function () {
+            var mainCategoryId = $(this).val();
+            var subCategorySelect = $('select[name="sub_category_id"]');
+
+            subCategorySelect.empty();
+            subCategorySelect.append('<option value="">Select Sub Category</option>');
+
+            if (mainCategoryId) {
+                $.ajax({
+                    url: '/get-subcategories/' + mainCategoryId,
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (data) {
+                        $.each(data, function (key, subcat) {
+                            subCategorySelect.append('<option value="' + subcat.id + '">' + subcat.name + '</option>');
+                        });
+
+                        // Reinitialize Select2 (if used)
+                        if ($.fn.select2) {
+                            subCategorySelect.select2();
+                        }
+                    },
+                    error: function () {
+                        alert('Error loading subcategories');
+                    }
+                });
+            }
+        });
+    });
 </script>
 @yield('form-plugins')
 @endif
