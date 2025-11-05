@@ -104,9 +104,11 @@ class courseController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Course $course)
     {
         //
+        $course->load(['mainCategory', 'subCategory']);
+        return view('courses.show', compact('course'));
     }
 
     /**

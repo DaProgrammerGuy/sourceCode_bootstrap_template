@@ -44,18 +44,6 @@ class Course extends Model
         'discount_price' => 'decimal:2',
     ];
 
-    // public function mainCategory()
-    //     {
-    //         return $this->belongsTo(Category::class, 'category_id');
-    //     }
-
-    // public function subCategory()
-    //     {
-    //         return $this->belongsTo(Category::class, 'sub_category_id');
-    //     }
-
-
-
       /**
      * Get the main category of the course
      */
@@ -108,6 +96,21 @@ public static $levelLabels = [
     4 => 'Expert',
     5 => 'N/A',
 ];
+
+/**
+     * Get human-readable subscription method
+     */
+    public function getSubscriptionNameAttribute()
+    {
+        return match($this->course_subscription_method) {
+            1 => 'Monthly',
+            2 => 'One Time',
+            3 => 'Quarterly',
+            4 => 'Annual',
+            5 => 'Free',
+            default => 'Unknown'
+        };
+    }
 
 public function getCourseMethodologyNameAttribute()
 {
