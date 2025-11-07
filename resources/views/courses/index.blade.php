@@ -43,9 +43,8 @@
                                 <th>Code</th>
                                 <th>Title</th>
                                 <th>Category</th>
-                                <th>Methodology</th>
-                                <th>Type</th>
                                 <th>Level</th>
+                                <th>Type</th>
                                 <th>Duration</th>
                                 <th>Status</th>
                                 <th>Actions</th>
@@ -56,35 +55,16 @@
                                 <tr>
                                     <td>{{ $course->course_code }}</td>
                                     <td>{{ $course->course_title }}</td>
-
-                                    <!-- Category display -->
                                     <td>
-                                        {{ $course->mainCategory->name ?? 'N/A' }}<br>
-                                        <small class="text-muted">
-                                            {{ $course->subCategory->name ?? '—' }}
-                                        </small>
-                                    </td>
-
-                                    <!-- Mapped Names -->
-                                    <td>
-                                        <span class="badge badge-secondary">
-                                            {{ $course->course_methodology_name }}
-                                        </span>
+                                        {{ $course->mainCategory->name ?? 'N/A' }} 
+                                        <br>
+                                        <small class="text-muted">{{ $course->subCategory->name ?? 'N/A' }}</small>
                                     </td>
                                     <td>
-                                        <span class="badge badge-warning">
-                                            {{ $course->course_type_name }}
-                                        </span>
+                                        <span class="badge badge-info">{{ $course->course_level_name }}</span>
                                     </td>
-                                    <td>
-                                        <span class="badge badge-info">
-                                            {{ $course->course_level_name }}
-                                        </span>
-                                    </td>
-
+                                    <td>{{ $course->course_type_name }}</td>
                                     <td>{{ $course->course_duration }} months</td>
-
-                                    <!-- Status -->
                                     <td>
                                         @if($course->is_active)
                                             <span class="badge badge-success">Active</span>
@@ -92,8 +72,6 @@
                                             <span class="badge badge-secondary">Inactive</span>
                                         @endif
                                     </td>
-
-                                    <!-- Actions -->
                                     <td>
                                         <a href="{{ route('courses.show', $course) }}" 
                                            class="btn btn-info btn-sm" title="View">
@@ -103,21 +81,18 @@
                                            class="btn btn-warning btn-sm" title="Edit">
                                             <i class="fas fa-edit"></i>
                                         </a>
-                                        <form action="{{ route('courses.destroy', $course) }}" 
-                                              method="POST" class="d-inline">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm" 
-                                                    onclick="return confirm('Are you sure you want to delete this course?')"
-                                                    title="Delete">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
-                                        </form>
+                                        <button type="button" 
+                                                class="btn btn-danger btn-sm delete-btn" 
+                                                data-id="{{ $course->id }}"
+                                                data-title="{{ $course->course_title }}"
+                                                title="Delete">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
                                     </td>
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="9" class="text-center">No courses found.</td>
+                                    <td colspan="8" class="text-center">No courses found.</td>
                                 </tr>
                             @endforelse
                         </tbody>
@@ -127,6 +102,39 @@
                 <!-- Pagination -->
                 <div class="mt-3">
                     {{ $courses->links() }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="deleteModalLabel">
+                        <i class="fas fa-exclamation-triangle"></i> Confirm Delete
+                    </h5>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete this course?</p>
+                    <p class="font-weight-bold" id="courseTitle"></p>
+                    <p class="text-danger"><small>This action cannot be undone.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        <i class="fas fa-times"></i> Cancel
+                    </button>
+                    <form id="deleteForm" method="POST" style="display: inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fas fa-trash"></i> Delete Course
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
