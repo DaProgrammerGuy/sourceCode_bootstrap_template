@@ -1,0 +1,151 @@
+/* === CUSTOM THEME COLORS === */
+
+:root {
+    --brand-green: #a2c95c;
+    --sidebar-dark: #1e1f23; /* dark gray instead of pure black */
+    --sidebar-hover: #2a2b30; /* slightly lighter on hover */
+}
+
+/* Replace default blue (primary) with brand green */
+.bg-primary,
+.btn-primary {
+    background-color: var(--brand-green) !important;
+    border-color: var(--brand-green) !important;
+}
+
+.text-primary {
+    color: var(--brand-green) !important;
+}
+
+/* Sidebar modern dark */
+.bg-gradient-primary,
+.sidebar {
+    background-color: var(--sidebar-dark) !important;
+    background-image: none !important;
+}
+
+/* Sidebar brand text */
+.sidebar .sidebar-brand-text {
+    color: var(--brand-green) !important;
+}
+
+/* Sidebar links */
+.sidebar .nav-item .nav-link {
+    color: #dcdcdc !important;
+}
+
+.sidebar .nav-item .nav-link:hover {
+    background-color: var(--sidebar-hover) !important;
+    color: var(--brand-green) !important;
+}
+
+/* Sidebar active link — clean subtle look */
+.sidebar .nav-item.active .nav-link {
+    background-color: var(--sidebar-hover) !important; /* darker shade, not green */
+    border-left: 4px solid var(--brand-green) !important; /* slim green accent bar */
+    color: var(--brand-green) !important;
+}
+
+
+/* Card accent border */
+.border-left-primary {
+    border-left: 0.25rem solid var(--brand-green) !important;
+}
+
+/* Topbar */
+.topbar {
+    background-color: #ffffff !important;
+    border-bottom: 2px solid var(--brand-green);
+}
+
+/* Buttons hover */
+.btn-primary:hover {
+    background-color: #8dbf4f !important; /* slightly darker shade */
+    border-color: #8dbf4f !important;
+}
+
+/* === SIDEBAR COLLAPSE (SUBMENU) CLEAN DARK LOOK === */
+
+/* Submenu container */
+.sidebar .collapse-inner {
+    background-color: #25262b !important; /* subtle dark shade */
+    border: none !important;
+    border-radius: 0 8px 8px 0;
+    padding: 0.5rem 0;
+}
+
+/* Header inside submenu */
+.sidebar .collapse-inner .collapse-header {
+    color: #9da1a7 !important;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    padding-left: 1rem;
+}
+
+/* Submenu items */
+.sidebar .collapse-inner .collapse-item {
+    color: #dcdcdc !important;
+    padding: 0.4rem 1.2rem;
+    transition: all 0.2s ease;
+    border: none !important;
+}
+
+/* Hover effect — clean highlight */
+.sidebar .collapse-inner .collapse-item:hover {
+    color: var(--brand-green) !important;
+    background-color: #2e2f34 !important;
+}
+
+/* Active submenu item */
+.sidebar .collapse-inner .collapse-item.active {
+    color: var(--brand-green) !important;
+    background-color: #2a2b30 !important;
+    font-weight: 600;
+}
+
+/* Divider inside submenu */
+.sidebar .collapse-divider {
+    border-top: 1px solid #333 !important;
+    margin: 0.4rem 0;
+}
+
+
+/* SELECT2 MATCHES SB ADMIN FORM-CONTROL */
+.select2-container--default .select2-selection--single {
+    height: 38px !important;
+    padding: 6px 12px !important;
+    font-size: 0.875rem !important;
+    line-height: 1.5 !important;
+    border: 1px solid #d1d3e2 !important;
+    border-radius: 0.35rem !important;
+    background-color: #fff !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 1.5 !important;
+    color: #6e707e !important;
+    padding-left: 0 !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 36px !important;
+    right: 8px !important;
+}
+
+/* .select2-container {
+    width: 100% !important;
+} */
+
+
+/* Default (expanded) logo */
+.sidebar .main-logo {
+    content: url('/sbAdmin2/img/Sourcecode-Academia-BE.png');
+    max-height: 40px;
+    transition: all 0.3s ease;
+}
+
+/* When sidebar is toggled (collapsed) */
+.sidebar.toggled .main-logo {
+    content: url('/sbAdmin2/img/logo.png');
+    max-height: 30px;
+}
