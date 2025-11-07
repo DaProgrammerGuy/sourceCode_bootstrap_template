@@ -149,3 +149,34 @@
     content: url('/sbAdmin2/img/logo.png');
     max-height: 30px;
 }
+
+/* ======== SOURCECODE ACADEMIA - LOGIN PAGE LEFT IMAGE ======== */
+.bg-login-image {
+    background: url('../sbAdmin2/img/login-page.png') center center/cover no-repeat !important;
+    position: relative;
+    background-color: #0f1621 !important;
+}
+
+/* Premium dark overlay (like Dubai apps) */
+.bg-login-image::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(0,123,255,0.4), rgba(108,117,125,0.6));
+    border-radius: 0.75rem 0 0 0.75rem;
+}
+
+.bg-register-image {
+    background: url('../sbAdmin2/img/login-page.png') center center/cover no-repeat !important;
+    position: relative;
+    background-color: #0f1621 !important;
+}
+
+/* Premium dark overlay (like Dubai apps) */
+.bg-register-image::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(0,123,255,0.4), rgba(108,117,125,0.6));
+    border-radius: 0.75rem 0 0 0.75rem;
+}
