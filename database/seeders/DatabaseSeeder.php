@@ -16,6 +16,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+
+         $this->call([
+            RolePermissionSeeder::class,
+        ]);
+
                 // Main Categories
         $thought = Category::create(['name' => 'The Thought']);
         $eloquence = Category::create(['name' => 'The Eloquence']);

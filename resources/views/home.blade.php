@@ -19,7 +19,7 @@
                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                     New SignUps
                                 </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $signups ?? 0}}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $signups ?? 0 }}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-user-plus fa-2x text-gray-300"></i>
@@ -36,7 +36,7 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">New Enrollments</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $enrollments ?? 0}}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $enrollments ?? 0 }}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-user-check fa-2x text-gray-300"></i>
@@ -54,7 +54,7 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Active Students</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $activeStudents ?? 0}}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $activeStudents ?? 0 }}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -67,6 +67,7 @@
         </div>
 
         <div class="row">
+            @role('admin')
             <!-- Add Course -->
             <div class="col-3 mb-4">
                 <a href={{ route('courses.create') }} class="text-decoration-none">
@@ -76,11 +77,13 @@
                                 <h4 class="font-weight-bold text-dark mb-1">Add Course</h4>
                                 <small class="text-muted">Create new course</small>
                             </div>
+                            
                             <i class="fas fa-book-open fa-2x text-gray-300 ml-auto"></i>
                         </div>
                     </div>
                 </a>
             </div>
+            @endrole
 
             <!-- Add Teacher -->
             <div class="col-3 mb-4">
@@ -128,7 +131,7 @@
 
             </div>
 
-             <!-- Quiz List -->
+            <!-- Quiz List -->
             <div class="col-3 mb-4">
                 <a href="https://cms.sourcecode.academy/quizzes" class="text-decoration-none">
                     <div class="card shadow h-100 py-3 border-left-success">
