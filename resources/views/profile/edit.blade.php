@@ -48,13 +48,9 @@
                             <!-- Name -->
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input type="text" 
-                                       name="name" 
-                                       id="name"
-                                       class="form-control @error('name') is-invalid @enderror" 
-                                       value="{{ old('name', $user->name) }}" 
-                                       required 
-                                       autofocus>
+                                <input type="text" name="name" id="name"
+                                    class="form-control @error('name') is-invalid @enderror"
+                                    value="{{ old('name', $user->name) }}" required autofocus>
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -65,19 +61,17 @@
                             <!-- Email -->
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" 
-                                       name="email" 
-                                       id="email"
-                                       class="form-control @error('email') is-invalid @enderror" 
-                                       value="{{ old('email', $user->email) }}" 
-                                       required>
+                                <input type="email" name="email" id="email"
+                                    class="form-control @error('email') is-invalid @enderror"
+                                    value="{{ old('email', $user->email) }}" required>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
 
-                                @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
+
+                                @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && !$user->hasVerifiedEmail())
                                     <small class="text-warning mt-2 d-block">
                                         Your email address is unverified.
                                         <form method="POST" action="{{ route('verification.send') }}" class="d-inline">
@@ -94,6 +88,14 @@
                                         </small>
                                     @endif
                                 @endif
+                            </div>
+
+                            <!-- Phone number for whatsapp -->
+
+                            <div class="form-group">
+                                <label for="phone">Phone (for WhatsApp)</label>
+                                <input type="text" name="phone" id="phone" value="{{ old('phone', $user->phone) }}"
+                                    class="form-control" placeholder="+923001234567">
                             </div>
 
                             <button type="submit" class="btn btn-primary">
@@ -118,11 +120,9 @@
                             <!-- Current Password -->
                             <div class="form-group">
                                 <label for="current_password">Current Password</label>
-                                <input type="password" 
-                                       name="current_password" 
-                                       id="current_password"
-                                       class="form-control @error('current_password', 'updatePassword') is-invalid @enderror" 
-                                       autocomplete="current-password">
+                                <input type="password" name="current_password" id="current_password"
+                                    class="form-control @error('current_password', 'updatePassword') is-invalid @enderror"
+                                    autocomplete="current-password">
                                 @error('current_password', 'updatePassword')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -133,11 +133,9 @@
                             <!-- New Password -->
                             <div class="form-group">
                                 <label for="password">New Password</label>
-                                <input type="password" 
-                                       name="password" 
-                                       id="password"
-                                       class="form-control @error('password', 'updatePassword') is-invalid @enderror" 
-                                       autocomplete="new-password">
+                                <input type="password" name="password" id="password"
+                                    class="form-control @error('password', 'updatePassword') is-invalid @enderror"
+                                    autocomplete="new-password">
                                 @error('password', 'updatePassword')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -148,11 +146,9 @@
                             <!-- Confirm Password -->
                             <div class="form-group">
                                 <label for="password_confirmation">Confirm Password</label>
-                                <input type="password" 
-                                       name="password_confirmation" 
-                                       id="password_confirmation"
-                                       class="form-control @error('password_confirmation', 'updatePassword') is-invalid @enderror" 
-                                       autocomplete="new-password">
+                                <input type="password" name="password_confirmation" id="password_confirmation"
+                                    class="form-control @error('password_confirmation', 'updatePassword') is-invalid @enderror"
+                                    autocomplete="new-password">
                                 @error('password_confirmation', 'updatePassword')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -176,13 +172,11 @@
                     </div>
                     <div class="card-body">
                         <p class="mb-3">
-                            Once your account is deleted, all of its resources and data will be permanently deleted. 
+                            Once your account is deleted, all of its resources and data will be permanently deleted.
                             Before deleting your account, please download any data or information that you wish to retain.
                         </p>
-                        <button type="button" 
-                                class="btn btn-danger" 
-                                data-toggle="modal" 
-                                data-target="#deleteAccountModal">
+                        <button type="button" class="btn btn-danger" data-toggle="modal"
+                            data-target="#deleteAccountModal">
                             <i class="fas fa-trash"></i> Delete Account
                         </button>
                     </div>
@@ -192,7 +186,8 @@
     </div>
 
     <!-- Delete Account Modal -->
-    <div class="modal fade" id="deleteAccountModal" tabindex="-1" role="dialog" aria-labelledby="deleteAccountModalLabel" aria-hidden="true">
+    <div class="modal fade" id="deleteAccountModal" tabindex="-1" role="dialog"
+        aria-labelledby="deleteAccountModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-danger text-white">
@@ -206,19 +201,16 @@
                 <form method="POST" action="{{ route('profile.destroy') }}">
                     @csrf
                     @method('DELETE')
-                    
+
                     <div class="modal-body">
                         <p>Are you sure you want to delete your account?</p>
                         <p class="text-danger"><strong>This action cannot be undone.</strong></p>
-                        
+
                         <div class="form-group">
                             <label for="password">Please enter your password to confirm:</label>
-                            <input type="password" 
-                                   name="password" 
-                                   id="password_delete"
-                                   class="form-control @error('password', 'userDeletion') is-invalid @enderror" 
-                                   placeholder="Password"
-                                   required>
+                            <input type="password" name="password" id="password_delete"
+                                class="form-control @error('password', 'userDeletion') is-invalid @enderror"
+                                placeholder="Password" required>
                             @error('password', 'userDeletion')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -226,7 +218,7 @@
                             @enderror
                         </div>
                     </div>
-                    
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
                             <i class="fas fa-times"></i> Cancel

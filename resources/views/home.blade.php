@@ -68,21 +68,21 @@
 
         <div class="row">
             @role('admin')
-            <!-- Add Course -->
-            <div class="col-3 mb-4">
-                <a href={{ route('courses.create') }} class="text-decoration-none">
-                    <div class="card shadow h-100 py-3 border-left-success">
-                        <div class="card-body d-flex align-items-center">
-                            <div>
-                                <h4 class="font-weight-bold text-dark mb-1">Add Course</h4>
-                                <small class="text-muted">Create new course</small>
+                <!-- Add Course -->
+                <div class="col-3 mb-4">
+                    <a href={{ route('courses.create') }} class="text-decoration-none">
+                        <div class="card shadow h-100 py-3 border-left-success">
+                            <div class="card-body d-flex align-items-center">
+                                <div>
+                                    <h4 class="font-weight-bold text-dark mb-1">Add Course</h4>
+                                    <small class="text-muted">Create new course</small>
+                                </div>
+
+                                <i class="fas fa-book-open fa-2x text-gray-300 ml-auto"></i>
                             </div>
-                            
-                            <i class="fas fa-book-open fa-2x text-gray-300 ml-auto"></i>
                         </div>
-                    </div>
-                </a>
-            </div>
+                    </a>
+                </div>
             @endrole
 
             <!-- Add Teacher -->
@@ -188,4 +188,25 @@
 
             </div>
         </div>
+
+        <script src="https://js.pusher.com/8.2/pusher.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/laravel-echo@1.16.1/dist/echo.iife.js"></script>
+
+        <script>
+            window.Pusher = Pusher;
+
+            window.Echo = new Echo({
+                broadcaster: 'pusher',
+                key: "392f0f626c92ba579db1", // your Pusher key
+                cluster: "us2", // your Pusher cluster
+                forceTLS: true
+            });
+
+            // Listen to role changes
+            Echo.channel('public-chat')
+                .listen('.role.changed', e => {
+                    console.log('Role changed:', e);
+                    alert(`${e.user} is now ${e.role}`);
+                });
+        </script>
     @endsection

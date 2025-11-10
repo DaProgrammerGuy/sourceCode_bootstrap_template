@@ -36,6 +36,8 @@
                                     <td class="current-role">
                                         @if ($user->hasRole('admin'))
                                             <span class="badge badge-danger">Admin</span>
+                                        @elseif ($user->hasRole('teacher'))
+                                            <span class="badge badge-warning">Teacher</span>
                                         @elseif ($user->hasRole('user'))
                                             <span class="badge badge-primary">User</span>
                                         @else
@@ -50,6 +52,9 @@
                                             <option value="user" {{ $user->hasRole('user') ? 'selected' : '' }}>User
                                             </option>
                                             <option value="admin" {{ $user->hasRole('admin') ? 'selected' : '' }}>Admin
+                                            </option>
+                                            <option value="teacher" {{ $user->hasRole('teacher') ? 'selected' : '' }}>
+                                                Teacher
                                             </option>
                                         </select>
                                     </td>
@@ -81,19 +86,33 @@
                     },
                     success: function(response) {
                         $('#alert-box').html(
-                            `<div class="alert alert-success">${response.message}</div>`
+                            `<div class="alert alert-success alert-dismissible fade show">
+                            ${response.message}
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                         </div>`
                         );
 
-                        // update the role badge instantly
-                        let badge =
-                            `<span class="badge ${role === 'admin' ? 'badge-danger' : 'badge-primary'}">${role.charAt(0).toUpperCase() + role.slice(1)}</span>`;
-                        $('#user-' + userId + ' .current-role').html(badge);
+                        // ---- BADGE UPDATE FIX ----
+                        let badgeHtml = '';
+                        if (role === 'admin') {
+                            badgeHtml = '<span class="badge badge-danger">Admin</span>';
+                        } else if (role === 'teacher') {
+                            badgeHtml = '<span class="badge badge-warning">Teacher</span>';
+                        } else if (role === 'user') {
+                            badgeHtml = '<span class="badge badge-primary">User</span>';
+                        } else {
+                            badgeHtml = '<span class="badge badge-secondary">None</span>';
+                        }
 
-                        setTimeout(() => $('#alert-box').empty(), 3000);
+                        $('#user-' + userId + ' .current-role').html(badgeHtml);
+                        // --------------------------
+
+                        setTimeout(() => $('#alert-box').empty(), 4000);
                     },
                     error: function() {
                         $('#alert-box').html(
-                            `<div class="alert alert-danger">Something went wrong!</div>`);
+                            `<div class="alert alert-danger">Failed! Check console.</div>`
+                        );
                     }
                 });
             });
