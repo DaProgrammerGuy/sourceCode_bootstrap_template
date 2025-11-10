@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('whatsapp_messages', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('conversation_id')->constrained()->onDelete('cascade');
+            $table->enum('sender_type', ['user', 'teacher', 'system']);
+            $table->text('message_body');
+            $table->string('twilio_sid')->nullable();
+            $table->enum('direction', ['inbound', 'outbound']);
             $table->timestamps();
         });
     }

@@ -10,6 +10,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\ConversationController as AdminConversationController;
+use App\Http\Controllers\Teacher\ConversationController as TeacherConversationController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -37,10 +39,46 @@ Route::middleware(['auth', 'verified', 'role:admin'])
     });
 
 
-
 Broadcast::routes();
 
+
+
+
+#Whatsapp Routes
+
+Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/conversations', [AdminConversationController::class, 'index'])->name('conversations.index');
+    Route::get('/conversations/{conversation}', [AdminConversationController::class, 'show'])->name('conversations.show');
+    Route::post('/conversations/{conversation}/reply', [AdminConversationController::class, 'reply'])->name('conversations.reply');
+    Route::post('/conversations/{conversation}/close', [AdminConversationController::class, 'close'])->name('conversations.close');
+});
+
+// Teacher routes
+Route::middleware(['auth', 'role:teacher'])->prefix('teacher')->name('teacher.')->group(function () {
+    Route::get('/conversations', [TeacherConversationController::class, 'index'])->name('conversations.index');
+    Route::get('/conversations/{conversation}', [TeacherConversationController::class, 'show'])->name('conversations.show');
+    Route::post('/conversations/{conversation}/reply', [TeacherConversationController::class, 'reply'])->name('conversations.reply');
+});
+
 require __DIR__.'/auth.php';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Route::get('send-mail', function () {
     $users = User::all();

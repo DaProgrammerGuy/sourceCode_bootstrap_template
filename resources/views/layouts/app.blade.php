@@ -3,6 +3,10 @@
 
 <head>
 
+    @php
+        // Force ALL asset() to use HTTPS + your current ngrok URL
+        config(['app.asset_url' => url('/')]);
+    @endphp
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -87,9 +91,9 @@
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     <form method="POST" action="{{ route('logout') }}" style="display:inline">
-                    @csrf
-                    <button class="btn btn-primary" type="submit">Logout</button>
-                </form>
+                        @csrf
+                        <button class="btn btn-primary" type="submit">Logout</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -114,99 +118,105 @@
     </script>
 
     <!-- ONLY RUN ON FORM PAGES -->
-@hasSection('form-plugins')
-<script>
-    window.addEventListener('load', function () {
-        // SELECT2
-        $('.select2').each(function () {
-            var $el = $(this);
-            var placeholder = $el.data('placeholder') || 'Select an option';
+    @hasSection('form-plugins')
+        <script>
+            window.addEventListener('load', function() {
+                // SELECT2
+                $('.select2').each(function() {
+                    var $el = $(this);
+                    var placeholder = $el.data('placeholder') || 'Select an option';
 
-            $el.select2({
-                placeholder: placeholder,
-                allowClear: true,
-                width: '100%',
-                theme: 'default'
+                    $el.select2({
+                        placeholder: placeholder,
+                        allowClear: true,
+                        width: '100%',
+                        theme: 'default'
+                    });
+
+                    setTimeout(function() {
+                        var val = $el.val();
+                        if (val) $el.val(val).trigger('change.select2');
+                    }, 50);
+                });
+
+                // DROPIFY - SMALL & NO CSS
+                $('.dropify').dropify({
+                    messages: {
+                        'default': 'Click or drop',
+                        'replace': 'Replace',
+                        'remove': '×',
+                        'error': 'Error'
+                    },
+                    height: 90 // ← small height
+                });
+
+                // DATETIMEPICKER
+                $('.datetimepicker').datetimepicker({
+                    format: 'YYYY-MM-DD'
+                });
+                $('.timepicker').datetimepicker({
+                    format: 'LT'
+                });
             });
 
-            setTimeout(function () {
-                var val = $el.val();
-                if (val) $el.val(val).trigger('change.select2');
-            }, 50);
-        });
+            $(document).ready(function() {
+                // Handle subcategory loading on any page where the selects exist
+                $(document).on('change', 'select[name="main_category_id"]', function() {
+                    var mainCategoryId = $(this).val();
+                    var subCategorySelect = $('select[name="sub_category_id"]');
 
-        // DROPIFY - SMALL & NO CSS
-        $('.dropify').dropify({
-            messages: {
-                'default': 'Click or drop',
-                'replace': 'Replace',
-                'remove':  '×',
-                'error':   'Error'
-            },
-            height: 90  // ← small height
-        });
+                    subCategorySelect.empty();
+                    subCategorySelect.append('<option value="">Select Sub Category</option>');
 
-        // DATETIMEPICKER
-        $('.datetimepicker').datetimepicker({ format: 'YYYY-MM-DD' });
-        $('.timepicker').datetimepicker({ format: 'LT' });
-    });
+                    if (mainCategoryId) {
+                        $.ajax({
+                            url: '/get-subcategories/' + mainCategoryId,
+                            type: 'GET',
+                            dataType: 'json',
+                            success: function(data) {
+                                $.each(data, function(key, subcat) {
+                                    subCategorySelect.append('<option value="' + subcat.id +
+                                        '">' + subcat.name + '</option>');
+                                });
 
-    $(document).ready(function () {
-        // Handle subcategory loading on any page where the selects exist
-        $(document).on('change', 'select[name="main_category_id"]', function () {
-            var mainCategoryId = $(this).val();
-            var subCategorySelect = $('select[name="sub_category_id"]');
-
-            subCategorySelect.empty();
-            subCategorySelect.append('<option value="">Select Sub Category</option>');
-
-            if (mainCategoryId) {
-                $.ajax({
-                    url: '/get-subcategories/' + mainCategoryId,
-                    type: 'GET',
-                    dataType: 'json',
-                    success: function (data) {
-                        $.each(data, function (key, subcat) {
-                            subCategorySelect.append('<option value="' + subcat.id + '">' + subcat.name + '</option>');
+                                // Reinitialize Select2 (if used)
+                                if ($.fn.select2) {
+                                    subCategorySelect.select2();
+                                }
+                            },
+                            error: function() {
+                                alert('Error loading subcategories');
+                            }
                         });
-
-                        // Reinitialize Select2 (if used)
-                        if ($.fn.select2) {
-                            subCategorySelect.select2();
-                        }
-                    },
-                    error: function () {
-                        alert('Error loading subcategories');
                     }
                 });
-            }
-        });
-    });
-    // Handle delete confirmation modal (for courses and other resources)
-    $(document).on('click', '.delete-btn', function() {
-        var itemId = $(this).data('id');
-        var itemTitle = $(this).data('title');
-        var deleteUrl = $(this).data('url') || window.location.pathname.split('/').slice(0, -1).join('/') + '/' + itemId;
-        
-        // If data-url is not provided, construct it from current route
-        if (!$(this).data('url')) {
-            var baseUrl = window.location.origin;
-            var path = window.location.pathname.split('/')[1]; // Get 'courses' from '/courses'
-            deleteUrl = baseUrl + '/' + path + '/' + itemId;
-        }
-        
-        // Set the item title in modal
-        $('#courseTitle').text(itemTitle);
-        
-        // Set the form action
-        $('#deleteForm').attr('action', deleteUrl);
-        
-        // Show the modal
-        $('#deleteModal').modal('show');
-    });
-</script>
-@yield('form-plugins')
-@endif
+            });
+            // Handle delete confirmation modal (for courses and other resources)
+            $(document).on('click', '.delete-btn', function() {
+                var itemId = $(this).data('id');
+                var itemTitle = $(this).data('title');
+                var deleteUrl = $(this).data('url') || window.location.pathname.split('/').slice(0, -1).join('/') +
+                    '/' + itemId;
+
+                // If data-url is not provided, construct it from current route
+                if (!$(this).data('url')) {
+                    var baseUrl = window.location.origin;
+                    var path = window.location.pathname.split('/')[1]; // Get 'courses' from '/courses'
+                    deleteUrl = baseUrl + '/' + path + '/' + itemId;
+                }
+
+                // Set the item title in modal
+                $('#courseTitle').text(itemTitle);
+
+                // Set the form action
+                $('#deleteForm').attr('action', deleteUrl);
+
+                // Show the modal
+                $('#deleteModal').modal('show');
+            });
+        </script>
+        @yield('form-plugins')
+    @endif
 
     @stack('scripts')
 </body>

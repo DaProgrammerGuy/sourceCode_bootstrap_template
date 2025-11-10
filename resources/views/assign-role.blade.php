@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@php
+    URL::forceScheme('https');
+@endphp
+
 @section('content')
     <div class="container-fluid">
         <h1 class="h3 mb-4 text-gray-800">Assign Roles</h1>
@@ -77,7 +81,7 @@
                 let role = $(this).val();
 
                 $.ajax({
-                    url: "{{ route('assign.role') }}",
+                    url: "{{ secure_url(route('assign.role')) }}",
                     method: "POST",
                     data: {
                         _token: "{{ csrf_token() }}",
@@ -118,4 +122,5 @@
             });
         });
     </script>
+    
 @endsection

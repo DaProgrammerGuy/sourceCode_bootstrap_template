@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('conversations', function (Blueprint $table) {
             $table->id();
+            $table->string('user_phone'); // User's WhatsApp number
+            $table->foreignId('teacher_id')->nullable()->constrained('users');
+            $table->enum('status', ['pending', 'active', 'closed'])->default('pending');
+            $table->timestamp('last_message_at')->nullable();
+            $table->integer('session_timeout_minutes')->default(30);            
             $table->timestamps();
         });
     }
