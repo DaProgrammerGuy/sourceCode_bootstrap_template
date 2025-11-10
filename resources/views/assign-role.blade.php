@@ -15,6 +15,7 @@
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>Email</th>
+                                <th>Verified</th> <!-- new column -->
                                 <th>Current Role</th>
                                 <th>Change Role</th>
                             </tr>
@@ -25,6 +26,13 @@
                                     <td>{{ $user->id }}</td>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
+                                    <td>
+                                        @if ($user->email_verified_at)
+                                            <span class="badge badge-success">Verified</span>
+                                        @else
+                                            <span class="badge badge-warning">Not Verified</span>
+                                        @endif
+                                    </td>
                                     <td class="current-role">
                                         @if ($user->hasRole('admin'))
                                             <span class="badge badge-danger">Admin</span>
@@ -45,10 +53,10 @@
                                             </option>
                                         </select>
                                     </td>
-
                                 </tr>
                             @endforeach
                         </tbody>
+
                     </table>
                 </div>
             </div>

@@ -3,6 +3,11 @@
 use App\Http\Controllers\courseController;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\ProfileController;
+use App\Mail\NotifyAllUsers;
+use App\Models\User;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,6 +25,7 @@ Route::middleware('auth', 'verified')->group(function () {
     });
 
     Route::get('/home', [homeController::class, 'index'])->name('home');
+
 
     Route::get('/courses/{any}', function () {
         abort(403);
@@ -50,3 +56,20 @@ Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+
+
+
+Route::get('send-mail', function(){
+    $users = User::all();
+
+    // $delay = 0;
+
+    foreach($users as $user){
+        Mail::to($user->email)->queue(new NotifyAllUsers());
+
+    }
+
+    return 'Email sent successfully!';
+});
+
